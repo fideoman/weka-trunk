@@ -111,7 +111,12 @@ public class ConverterUtils implements Serializable, RevisionHandler {
         || location.startsWith("ftp://") || location.startsWith("file://")) {
         m_URL = new URL(location);
       } else {
-        m_File = new File(location);
+    	  // Let's try to load files from classpath.     	  
+    	  if(this.getClass().getClassLoader().getResource(location) != null) {
+    		  m_File = new File(this.getClass().getClassLoader().getResource(location).getFile());
+    	  } else { // If not present, then load as usual: FileSystem.
+    		  m_File = new File(location);
+    	  }
       }
 
       // quick check: is it ARFF?
