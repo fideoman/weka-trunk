@@ -113,10 +113,10 @@ public class ConverterUtils implements Serializable, RevisionHandler {
       } else {
     	  // Let's try to load files from classpath.     	  
     	  if(this.getClass().getClassLoader().getResource(location) != null) {
+    		  location = this.getClass().getClassLoader().getResource(location).getFile();
     		  m_File = new File(this.getClass().getClassLoader().getResource(location).getFile());
-    	  } else { // If not present, then load as usual: FileSystem.
-    		  m_File = new File(location);
-    	  }
+    	  } 
+    	  m_File = new File(location);
       }
 
       // quick check: is it ARFF?
