@@ -1,3 +1,12 @@
+## This is a ready-to-use fork from official Dev repository (git),
+## For being directly imported into Eclipse 4.11, with OpenJDK 11.
+## Links: 
+## OpenJDK 11: https://builds.shipilev.net/openjdk-shenandoah-jdk11/
+## Eclipse 4.11 (Minimal): 
+## Windows: https://download.eclipse.org/eclipse/downloads/drops4/R-4.11-201903070500/download.php?dropFile=eclipse-platform-4.11-win32-x86_64.zip
+## Linux: https://download.eclipse.org/eclipse/downloads/drops4/R-4.11-201903070500/download.php?dropFile=eclipse-platform-4.11-linux-gtk-x86_64.tar.gz
+## MacOS: https://download.eclipse.org/eclipse/downloads/drops4/R-4.11-201903070500/download.php?dropFile=eclipse-platform-4.11-macosx-cocoa-x86_64.dmg
+
 # WEKA (developer version)
 
 Read-only git mirror of Weka's subversion repository.

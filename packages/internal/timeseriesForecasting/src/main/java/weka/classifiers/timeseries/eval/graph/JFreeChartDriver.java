@@ -29,7 +29,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.axis.NumberAxis;
@@ -175,7 +175,7 @@ public class JFreeChartDriver extends GraphDriver {
     }
 
     XYErrorRenderer renderer = new XYErrorRenderer();
-    renderer.setBaseLinesVisible(true);
+    renderer.setDefaultLinesVisible(true);
     renderer.setDrawXError(false);
     renderer.setDrawYError(true);
     // renderer.setShapesFilled(true);
@@ -211,7 +211,7 @@ public class JFreeChartDriver extends GraphDriver {
     if (filename.toLowerCase().lastIndexOf(".png") < 0) {
       filename = filename + ".png";
     }
-    ChartUtilities.saveChartAsPNG(new File(filename),
+    ChartUtils.saveChartAsPNG(new File(filename),
         ((ChartPanel) chart).getChart(), width, height);
   }
 
@@ -416,7 +416,7 @@ public class JFreeChartDriver extends GraphDriver {
     }
 
     XYErrorRenderer renderer = new XYErrorRenderer();
-    renderer.setBaseLinesVisible(true);
+    renderer.setDefaultLinesVisible(true);
     // renderer.setShapesFilled(true);
     XYPlot plot = new XYPlot(xyDataset, timeAxis, valueAxis, renderer);
     JFreeChart chart = new JFreeChart(title, JFreeChart.DEFAULT_TITLE_FONT,
@@ -669,7 +669,7 @@ public class JFreeChartDriver extends GraphDriver {
       }
     }
 
-    renderer.setBaseLinesVisible(true);
+    renderer.setDefaultLinesVisible(true);
     renderer.setDrawXError(false);
     renderer.setDrawYError(true);
 

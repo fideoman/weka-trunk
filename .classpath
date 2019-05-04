@@ -1,8 +1,336 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="weka/src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="weka/lib/java-cup.jar"/>
-	<classpathentry kind="lib" path="weka/lib/packageManager.jar"/>
+	<classpathentry kind="src" path="weka/src/test/resources"/>
+	<classpathentry kind="src" path="weka/src/test/java"/>
+	<classpathentry kind="src" path="wekadocs/data"/>
+	<classpathentry kind="src" path="packages/external/associationRulesVisualizer/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/averagedOneDependenceEstimators/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/averagedOneDependenceEstimators/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/bayesianLogisticRegression/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/bayesianLogisticRegression/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/cascadeKMeans/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/cascadeKMeans/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/citationKNN/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/citationKNN/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/classifierErrors/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/CLOPE/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/CLOPE/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/decorate/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/decorate/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/DilcaDistance/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/fastCorrBasedFS/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/fastCorrBasedFS/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/elasticNet/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/elasticNet/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/EMImputation/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/EMImputation/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/ensembleLibrary/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/ensembleLibrary/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/functionalTrees/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/functionalTrees/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/fuzzyUnorderedRuleInduction/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/fuzzyUnorderedRuleInduction/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/generalizedSequentialPatterns/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/generalizedSequentialPatterns/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/hiddenNaiveBayes/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/hiddenNaiveBayes/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/J48graft/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/J48graft/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/kfGroovy/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/kfKettle/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/kfPMMLClassifierScoring/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/latentSemanticAnalysis/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/latentSemanticAnalysis/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/lazyBayesianRules/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/lazyBayesianRules/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/levenshteinEditDistance/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/LibLINEAR/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/LibLINEAR/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/LibSVM/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/LibSVM/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/linearForwardSelection/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/linearForwardSelection/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/multilayerPerceptronCS/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/multilayerPerceptronCS/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/NNge/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/NNge/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/normalize/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/normalize/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/optics_dbScan/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/optics_dbScan/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/ordinalLearningMethod/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/ordinalLearningMethod/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/prefuseGraph/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/prefuseGraphViewer/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/prefuseTree/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/probabilisticSignificanceAE/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/probabilisticSignificanceAE/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/rotationForest/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/rotationForest/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/scatterPlot3D/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/SMOTE/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/SMOTE/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/snowball-stemmers/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/snowball-stemmers/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/snowball-stemmers/src/test/resources"/>
+	<classpathentry kind="src" path="packages/external/stackingC/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/stackingC/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/tabuAndScatterSearch/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/tabuAndScatterSearch/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/tertius/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/tertius/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/tigerjython/src/main/resources"/>
+	<classpathentry kind="src" path="packages/external/winnow/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/winnow/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/fuzzyLaticeReasoning/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/fuzzyLaticeReasoning/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/ordinalStochasticDominance/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/ordinalStochasticDominance/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/classAssociationRules/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/classAssociationRules/src/test/java"/>
+	<classpathentry kind="src" path="packages/external/DMNBtext/src/main/java"/>
+	<classpathentry kind="src" path="packages/external/DMNBtext/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/predictiveApriori/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/predictiveApriori/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/alternatingDecisionTrees/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/alternatingDecisionTrees/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/alternatingModelTrees/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/alternatingModelTrees/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/attributeSelectionSearchMethods/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/attributeSelectionSearchMethods/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/bestFirstTree/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/bestFirstTree/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/calibrationCurve/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/chiSquaredAttributeEval/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/chiSquaredAttributeEval/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/classificationViaClustering/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/classificationViaClustering/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/classifierBasedAttributeSelection/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/classifierBasedAttributeSelection/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/clojureClassifier/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/clojureClassifier/src/main/resources"/>
+	<classpathentry kind="src" path="packages/internal/denormalize/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/denormalize/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/discriminantAnalysis/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/discriminantAnalysis/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/distributedWekaBase/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/distributedWekaBase/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/distributedWekaHadoopCore/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/distributedWekaSpark2Dev/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/distributedWekaSpark2Dev/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/DTNB/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/DTNB/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/dualPerturbAndCombine/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/dualPerturbAndCombine/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/ensemblesOfNestedDichotomies/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/ensemblesOfNestedDichotomies/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/extraTrees/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/extraTrees/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/filteredAttributeSelection/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/filteredAttributeSelection/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/grading/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/grading/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/gridSearch/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/gridSearch/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/hotSpot/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/hotSpot/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/hyperPipes/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/hyperPipes/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/isolationForest/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/isolationForest/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/isotonicRegression/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/isotonicRegression/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/iterativeAbsoluteErrorRegression/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/iterativeAbsoluteErrorRegression/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/kernelLogisticRegression/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/kernelLogisticRegression/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/largeScaleKernelLearning/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/largeScaleKernelLearning/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/leastMedSquared/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/leastMedSquared/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/localOutlierFactor/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/localOutlierFactor/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/logarithmicErrorMetrics/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/massiveOnlineAnalysis/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/massiveOnlineAnalysis/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/metaCost/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/metaCost/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/multiBoostAB/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/multiBoostAB/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/multiInstanceFilters/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/multiInstanceFilters/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/multiInstanceLearning/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/multiInstanceLearning/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/multiLayerPerceptrons/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/multiLayerPerceptrons/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/naiveBayesTree/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/naiveBayesTree/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/newKnowledgeFlowStepExamples/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/niftiLoader/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/niftiLoader/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/niftiLoader/src/test/resources"/>
+	<classpathentry kind="src" path="packages/internal/oneClassClassifier/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/oneClassClassifier/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/ordinalClassClassifier/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/ordinalClassClassifier/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/paceRegression/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/paceRegression/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/partialLeastSquares/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/partialLeastSquares/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/percentageErrorMetrics/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/probabilityCalibrationTrees/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/probabilityCalibrationTrees/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/racedIncrementalLogitBoost/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/racedIncrementalLogitBoost/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/raceSearch/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/raceSearch/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/RBFNetwork/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/RBFNetwork/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/realAdaBoost/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/realAdaBoost/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/ridor/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/ridor/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/scriptingClassifiers/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/sequentialInformationalBottleneckClusterer/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/sequentialInformationalBottleneckClusterer/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/simpleCART/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/simpleCART/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/simpleEducationalLearningSchemes/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/simpleEducationalLearningSchemes/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/SPegasos/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/SPegasos/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/streamingUnivariateStats/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/supervisedAttributeScaling/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/supervisedAttributeScaling/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/SVMAttributeEval/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/SVMAttributeEval/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/thresholdSelector/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/timeSeriesFilters/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/timeSeriesFilters/src/main/resources"/>
+	<classpathentry kind="src" path="packages/internal/timeSeriesFilters/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/main/resources"/>
+	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/resources"/>
+	<classpathentry kind="src" path="packages/internal/userClassifier/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/userClassifier/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/votingFeatureIntervals/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/votingFeatureIntervals/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/wavelet/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/wavelet/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/wekaPython/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/wekaPython/src/main/resources"/>
+	<classpathentry kind="src" path="packages/internal/wekaPython/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/wekaServer/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/XMeans/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/XMeans/src/test/java"/>
+	<classpathentry kind="src" path="wekaexamples/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/RPlugin/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/resources"/>
+	<classpathentry kind="src" path="packages/internal/WekaExcel/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/WekaExcel/src/test/java"/>
+	<classpathentry kind="src" path="packages/internal/WekaODF/src/main/java"/>
+	<classpathentry kind="src" path="packages/internal/WekaODF/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="weka/lib/java-cup.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/arpack_combined.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/bounce.jar" sourcepath="weka/lib/bounce-src.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/commons-compress-1.18.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/core.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/jclipboardhelper-0.1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/jfilechooser-bookmarks-0.1.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/JFlex.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/junit.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/mtj.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/jna-platform.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/jna.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/javagd-0.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/JRI.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/JRIEngine.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/kxml2-min-2.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/REngine.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/rJavaClassLoader.zip"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/xmlpull-1.1.3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/xpp3_min-1.1.4c.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/xstream-1.4.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/geronimo-stax-api_1.0_spec-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/poi-3.8-20120326.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/poi-ooxml-3.8-20120326.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/poi-ooxml-schemas-3.8-20120326.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="weka/lib/jOpenDocument.jar"/>
+	<classpathentry kind="lib" path="weka/lib/figtree.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jmathplot.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jython.jar"/>
+	<classpathentry kind="lib" path="weka/lib/libsvm.jar"/>
+	<classpathentry kind="lib" path="weka/lib/LibSVMpkg.jar"/>
+	<classpathentry kind="lib" path="weka/lib/prefuse.jar"/>
+	<classpathentry kind="lib" path="weka/lib/activation-1.0.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/j3dcore.jar"/>
+	<classpathentry kind="lib" path="weka/lib/mail-1.4.jar"/>
+	<classpathentry kind="lib" path="weka/lib/snowball.jar"/>
+	<classpathentry kind="lib" path="weka/lib/vecmath.jar"/>
+	<classpathentry kind="lib" path="weka/lib/j3dutils.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-ant-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-cli-commons-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-cli-picocli-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-console-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-datetime-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-docgenerator-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-groovydoc-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-groovysh-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-jmx-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-json-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-jsr223-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-macro-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-nio-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-servlet-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-sql-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-swing-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-templates-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-test-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-test-junit5-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-testng-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/groovy-xml-2.5.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/liblinear-java-1.96-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="weka/lib/tigerjython2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/clojure-1.5.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/clojure-utils-0.2.3.jar"/>
+	<classpathentry kind="lib" path="weka/lib/boon-0.32.jar"/>
+	<classpathentry kind="lib" path="weka/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="weka/lib/commons-io-1.3.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jsyntaxpane-0.9.5-b29.jar"/>
+	<classpathentry kind="lib" path="weka/lib/moa.jar"/>
+	<classpathentry kind="lib" path="weka/lib/t-digest-3.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/httpclient-3.1.0.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jetty-6.1.5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/servlet-api-2.5-6.1.14.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jetty-util-7.0.0.pre5.jar"/>
+	<classpathentry kind="lib" path="weka/lib/spark-core_2.12-2.4.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/spark-mllib_2.12-2.4.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/hadoop-core-1.2.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jfreechart-1.5.0.jar"/>
+	<classpathentry kind="lib" path="weka/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="weka/lib/spark-sql_2.12-2.4.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/spark-catalyst_2.12-2.4.2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/scala-reflect-2.11.0.jar"/>
+	<classpathentry kind="lib" path="weka/lib/opencsv-2.4.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jgoodies-common-1.2.0.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jgoodies-looks-2.4.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="weka/lib/spark-csv_2.10-1.5.0.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jaxb-api-2.4.0-b180830.0359.jar"/>
+	<classpathentry kind="lib" path="weka/lib/javafx.graphics.jar"/>
 	<classpathentry kind="output" path="weka/build/classes"/>
 </classpath>
