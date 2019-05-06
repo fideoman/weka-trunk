@@ -106,7 +106,6 @@
 	<classpathentry kind="src" path="packages/internal/chiSquaredAttributeEval/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/classificationViaClustering/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/classificationViaClustering/src/test/java"/>
-	<classpathentry kind="src" path="packages/internal/classifierBasedAttributeSelection/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/classifierBasedAttributeSelection/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/clojureClassifier/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/clojureClassifier/src/main/resources"/>
