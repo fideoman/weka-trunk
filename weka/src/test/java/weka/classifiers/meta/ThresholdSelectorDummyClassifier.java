@@ -43,6 +43,10 @@ public class ThresholdSelectorDummyClassifier
   private final double[] m_Preds;
   private int m_Pos;
 
+  public ThresholdSelectorDummyClassifier() {
+	  m_Preds = new double[1];
+  }
+  
   public ThresholdSelectorDummyClassifier(double[] preds) {
 
     m_Preds = new double[preds.length];
