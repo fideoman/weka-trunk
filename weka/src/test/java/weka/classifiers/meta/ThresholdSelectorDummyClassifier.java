@@ -40,11 +40,10 @@ public class ThresholdSelectorDummyClassifier
   /** for serialization */
   private static final long serialVersionUID = -2040984810834943903L;
 
-  private final double[] m_Preds;
+  private double[] m_Preds;
   private int m_Pos;
 
   public ThresholdSelectorDummyClassifier() {
-	  m_Preds = new double[1];
   }
   
   public ThresholdSelectorDummyClassifier(double[] preds) {
