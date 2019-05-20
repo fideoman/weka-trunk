@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="weka/src/main/java"/>
-	<classpathentry kind="src" path="weka/src/test/resources"/>
 	<classpathentry kind="src" path="weka/src/test/java"/>
-	<classpathentry kind="src" path="wekadocs/data"/>
 	<classpathentry kind="src" path="packages/external/associationRulesVisualizer/src/main/java"/>
 	<classpathentry kind="src" path="packages/external/averagedOneDependenceEstimators/src/main/java"/>
 	<classpathentry kind="src" path="packages/external/averagedOneDependenceEstimators/src/test/java"/>
@@ -80,7 +78,6 @@
 	<classpathentry kind="src" path="packages/external/tabuAndScatterSearch/src/test/java"/>
 	<classpathentry kind="src" path="packages/external/tertius/src/main/java"/>
 	<classpathentry kind="src" path="packages/external/tertius/src/test/java"/>
-	<classpathentry kind="src" path="packages/external/tigerjython/src/main/resources"/>
 	<classpathentry kind="src" path="packages/external/winnow/src/main/java"/>
 	<classpathentry kind="src" path="packages/external/winnow/src/test/java"/>
 	<classpathentry kind="src" path="packages/external/fuzzyLaticeReasoning/src/main/java"/>
@@ -152,7 +149,6 @@
 	<classpathentry kind="src" path="packages/internal/localOutlierFactor/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/logarithmicErrorMetrics/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/massiveOnlineAnalysis/src/main/java"/>
-	<classpathentry kind="src" path="packages/internal/massiveOnlineAnalysis/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/metaCost/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/metaCost/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/multiBoostAB/src/main/java"/>
@@ -168,7 +164,6 @@
 	<classpathentry kind="src" path="packages/internal/newKnowledgeFlowStepExamples/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/niftiLoader/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/niftiLoader/src/test/java"/>
-	<classpathentry kind="src" path="packages/internal/niftiLoader/src/test/resources"/>
 	<classpathentry kind="src" path="packages/internal/oneClassClassifier/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/oneClassClassifier/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/ordinalClassClassifier/src/main/java"/>
@@ -206,12 +201,9 @@
 	<classpathentry kind="src" path="packages/internal/SVMAttributeEval/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/thresholdSelector/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/timeSeriesFilters/src/main/java"/>
-	<classpathentry kind="src" path="packages/internal/timeSeriesFilters/src/main/resources"/>
 	<classpathentry kind="src" path="packages/internal/timeSeriesFilters/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/main/java"/>
-	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/main/resources"/>
 	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/java"/>
-	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/resources"/>
 	<classpathentry kind="src" path="packages/internal/userClassifier/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/userClassifier/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/votingFeatureIntervals/src/main/java"/>
@@ -224,14 +216,16 @@
 	<classpathentry kind="src" path="packages/internal/wekaServer/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/XMeans/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/XMeans/src/test/java"/>
-	<classpathentry kind="src" path="wekaexamples/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/RPlugin/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/java"/>
-	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/resources"/>
 	<classpathentry kind="src" path="packages/internal/WekaExcel/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/WekaExcel/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/WekaODF/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/WekaODF/src/test/java"/>
+	<classpathentry kind="src" path="weka/src/main/resources/jni"/>
+	<classpathentry kind="src" path="weka/src/test/resources/wekarefs"/>
+	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/resources/wekarefs"/>
+	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/resources/wekarefs"/>
 	<classpathentry kind="lib" path="weka/lib/java-cup.jar"/>
 	<classpathentry kind="lib" path="weka/lib/arpack_combined.jar"/>
 	<classpathentry kind="lib" path="weka/lib/bounce.jar" sourcepath="weka/lib/bounce-src.jar"/>
@@ -327,5 +321,8 @@
 	<classpathentry kind="lib" path="weka/lib/jaxb-api-2.4.0-b180830.0359.jar"/>
 	<classpathentry kind="lib" path="weka/lib/javafx.graphics.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="weka/lib/jniloader-1.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/native_ref-java-1.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/native_system-java-1.1.jar"/>
 	<classpathentry kind="output" path="weka/build/classes"/>
 </classpath>
