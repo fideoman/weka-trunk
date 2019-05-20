@@ -21,7 +21,6 @@
 
 package weka.classifiers.trees.lmt;
 
-import com.sun.nio.sctp.IllegalReceiveException;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Evaluation;
 import weka.core.Attribute;
