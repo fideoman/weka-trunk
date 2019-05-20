@@ -132,10 +132,7 @@ public class PythonSession {
     m_pythonCommand = pythonCommand;
     s_sessionSingleton = null;
     s_pythonEnvCheckResults = "";
-    String tester =
-      WekaPackageManager.PACKAGES_DIR.getAbsolutePath() + File.separator
-        + "wekaPython" + File.separator + "resources" + File.separator + "py"
-        + File.separator + "pyCheck.py";
+    String tester = "pyCheck.py";
     ProcessBuilder builder = new ProcessBuilder(pythonCommand, tester);
     Process pyProcess = builder.start();
     StringWriter writer = new StringWriter();
@@ -217,10 +214,7 @@ public class PythonSession {
     acceptThread.start();
 
     if (startPython) {
-      String serverScript =
-        WekaPackageManager.PACKAGES_DIR.getAbsolutePath() + File.separator
-          + "wekaPython" + File.separator + "resources" + File.separator + "py"
-          + File.separator + "pyServer.py";
+      String serverScript = "pyServer.py";
       ProcessBuilder processBuilder =
         new ProcessBuilder(m_pythonCommand, serverScript, "" + localPort,
           m_debug ? "debug" : "");
