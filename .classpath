@@ -324,5 +324,11 @@
 	<classpathentry kind="lib" path="weka/lib/jniloader-1.1.jar"/>
 	<classpathentry kind="lib" path="weka/lib/native_ref-java-1.1.jar"/>
 	<classpathentry kind="lib" path="weka/lib/native_system-java-1.1.jar"/>
+	<classpathentry kind="lib" path="weka/lib/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="weka/lib/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="weka/lib/gluegen.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="weka/lib/jogl-all.jar"/>
 	<classpathentry kind="output" path="weka/build/classes"/>
 </classpath>
