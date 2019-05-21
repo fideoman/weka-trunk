@@ -121,7 +121,8 @@ public abstract class BaseSparkJobConfig extends DistributedJobConfig {
     + File.separator
     + "lib" + File.separator + "t-digest-3.1.jar";
 
-  public static final String WEKA_SPARK_PROPS = "wekaSpark.props";
+  public static final InputStream WEKA_SPARK_PROPS = (BaseSparkJobConfig.class.getClassLoader().getResource("wekaSpark.props") != null ? 
+		  BaseSparkJobConfig.class.getClassLoader().getResourceAsStream("wekaSpark.props") : null);
   protected static List<String> s_runtimeLibraries = new ArrayList<>();
 
   static {
@@ -130,10 +131,8 @@ public abstract class BaseSparkJobConfig extends DistributedJobConfig {
       s_runtimeLibraries.addAll(Arrays.asList(DISTRIBUTED_WEKA_SPARK_JAR,
         DISTRIBUTED_WEKA_BASE_JAR, OPEN_CSV_JAR, JFREECHART_JAR, JCOMMON_JAR,
         COLT_JAR, LA4J_JAR, TDIGEST_JAR));
-      File propsFile =
-        new File(WEKA_SPARK_PROPS);
       Properties sparkProps = new Properties();
-      sparkProps.load(new FileInputStream(propsFile));
+      if (WEKA_SPARK_PROPS != null) sparkProps.load(WEKA_SPARK_PROPS);
 
       String runtimeLibs = sparkProps.getProperty("sparkRuntimeLibs", "");
       String[] libs = runtimeLibs.split(",");
