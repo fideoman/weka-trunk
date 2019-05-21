@@ -582,15 +582,15 @@ public class JRILoader {
     // classes
     // in PRELOAD are needed as dependencies but it is not an issue if they also
     // get loaded by child class loaders
-    byte[] byteCodeLogger = getByteCode("/weka/core/RLoggerAPI.class");
-    byte[] byteCodeAPI = getByteCode("/weka/core/RSessionAPI.class");
-    byte[] byteCodeGDL = getByteCode("/weka/core/JavaGDListener.class");
-    byte[] byteCodeGD = getByteCode("/weka/core/JavaGDOffscreenRenderer.class");
-    byte[] byteCodeRSession = getByteCode("/weka/core/RSessionImpl.class");
-    byte[] byteCodeJRINative = getByteCode("/weka/core/JRINativeLoader.class");
-    byte[] byteCodeJavaGDNotifier = getByteCode("/weka/core/JavaGDNotifier.class");
-    byte[] byteCodeRniIdle = getByteCode("/weka/core/RniIdle.class");
-    byte[] byteCodeREngineStartup= getByteCode("/weka/core/REngineStartup.class");
+    byte[] byteCodeLogger = getByteCode("/weka/core/RLoggerAPI.bytecode");
+    byte[] byteCodeAPI = getByteCode("/weka/core/RSessionAPI.bytecode");
+    byte[] byteCodeGDL = getByteCode("/weka/core/JavaGDListener.bytecode");
+    byte[] byteCodeGD = getByteCode("/weka/core/JavaGDOffscreenRenderer.bytecode");
+    byte[] byteCodeRSession = getByteCode("/weka/core/RSessionImpl.bytecode");
+    byte[] byteCodeJRINative = getByteCode("/weka/core/JRINativeLoader.bytecode");
+    byte[] byteCodeJavaGDNotifier = getByteCode("/weka/core/JavaGDNotifier.bytecode");
+    byte[] byteCodeRniIdle = getByteCode("/weka/core/RniIdle.bytecode");
+    byte[] byteCodeREngineStartup= getByteCode("/weka/core/REngineStartup.bytecode");
 
     List<byte[]> preloadClassByteCode = new ArrayList<byte[]>();
 
