@@ -225,8 +225,8 @@
 	<classpathentry kind="src" path="weka/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/resources/wekarefs"/>
-	<classpathentry kind="src" path="weka/src/main/resources/helpers"/>
 	<classpathentry kind="src" path="packages/internal/wekaPython/src/main/resources/py"/>
+	<classpathentry kind="src" path="weka/src/main/resources/props"/>
 	<classpathentry kind="lib" path="weka/lib/java-cup.jar"/>
 	<classpathentry kind="lib" path="weka/lib/arpack_combined.jar"/>
 	<classpathentry kind="lib" path="weka/lib/bounce.jar" sourcepath="weka/lib/bounce-src.jar"/>
