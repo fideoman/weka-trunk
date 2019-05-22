@@ -6,7 +6,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="weka/src/main/java"/>
+	<classpathentry kind="src" path="weka/src/main/resources/jni"/>
+	<classpathentry kind="src" path="weka/src/main/resources/props"/>
 	<classpathentry kind="src" path="weka/src/test/java"/>
+	<classpathentry kind="src" path="weka/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/external/associationRulesVisualizer/src/main/java"/>
 	<classpathentry kind="src" path="packages/external/averagedOneDependenceEstimators/src/main/java"/>
 	<classpathentry kind="src" path="packages/external/averagedOneDependenceEstimators/src/test/java"/>
@@ -226,12 +229,9 @@
 	<classpathentry kind="src" path="packages/internal/WekaExcel/src/test/java"/>
 	<classpathentry kind="src" path="packages/internal/WekaODF/src/main/java"/>
 	<classpathentry kind="src" path="packages/internal/WekaODF/src/test/java"/>
-	<classpathentry kind="src" path="weka/src/main/resources/jni"/>
-	<classpathentry kind="src" path="weka/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/wekaPython/src/main/resources/py"/>
-	<classpathentry kind="src" path="weka/src/main/resources/props"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/java-cup.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/arpack_combined.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/bounce.jar" sourcepath="weka/lib/bounce-src.jar"/>
