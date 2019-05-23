@@ -146,7 +146,6 @@ weka.classifiers.Classifier=\
  weka.classifiers.functions.LinearRegression,\
  weka.classifiers.functions.Logistic,\
  weka.classifiers.functions.MultilayerPerceptron,\
- weka.classifiers.functions.ELM,\
  weka.classifiers.functions.PaceRegression,\
  weka.classifiers.functions.PLSClassifier,\
  weka.classifiers.functions.RBFNetwork,\

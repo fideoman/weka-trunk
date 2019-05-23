@@ -19,7 +19,6 @@ weka.experiment.ResultListener=\
 weka.experiment.SplitEvaluator=\
   weka.experiment
 
-# weka.classifiers.sklearn,\
 # Lists the Classifiers-Packages I want to choose from
 weka.classifiers.Classifier=\
  weka.classifiers.bayes,\
@@ -36,7 +35,8 @@ weka.classifiers.Classifier=\
  weka.classifiers.clojure,\
  weka.classifiers.mllib,\
  weka.classifiers.mlr,\
- weka.classifiers.timeseries
+ weka.classifiers.timeseries,\
+ weka.classifiers.sklearn
 
 weka.associations.CARuleMiner=\
  weka.associations
