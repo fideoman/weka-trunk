@@ -461,7 +461,7 @@ public class PythonPanel extends JPanel {
     if (!PythonSession.pythonAvailable()) {
       // try initializing
       try {
-        if (!PythonSession.initSession("python", m_debug.isSelected())) {
+        if (!PythonSession.initSession("python3", m_debug.isSelected())) {
           m_envEvalResults = PythonSession.getPythonEnvCheckResults();
           m_pyAvailable = false;
         }

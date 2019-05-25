@@ -380,7 +380,7 @@ public class PythonScriptExecutor extends JPanel implements BeanCommon,
     PythonSession session;
     if (!PythonSession.pythonAvailable()) {
       // try initializing
-      if (!PythonSession.initSession("python", getDebug())) {
+      if (!PythonSession.initSession("python3", getDebug())) {
         String envEvalResults = PythonSession.getPythonEnvCheckResults();
         throw new Exception("Was unable to start python environment:\n\n"
           + envEvalResults);

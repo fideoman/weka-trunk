@@ -35,7 +35,7 @@ import weka.gui.WorkbenchDefaults;
  * @author Mark Hall
  * @version $Revision: $
  */
-@PerspectiveInfo(ID = "python", title = "CPython Scripting",
+@PerspectiveInfo(ID = "python3", title = "CPython Scripting",
   toolTipText = "Write and execute Python scripts",
   iconPath = "weka/gui/knowledgeflow/icons/python-logo_small.png")
 public class PythonPerspective extends AbstractPerspective {
