@@ -237,7 +237,6 @@
 	<classpathentry exported="true" kind="lib" path="weka/lib/jfilechooser-bookmarks-0.1.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/JFlex.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/junit.jar"/>
-	<classpathentry exported="true" kind="lib" path="weka/lib/mtj.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/jna-platform.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/jna.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/javagd-0.6.1.jar"/>
@@ -332,5 +331,6 @@
 	<classpathentry exported="true" kind="lib" path="weka/lib/jogl-all.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/commons-lang3-3.9.jar"/>
 	<classpathentry kind="lib" path="weka/lib/tigerjython2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/mtj.jar"/>
 	<classpathentry kind="output" path="weka/build/classes"/>
 </classpath>
