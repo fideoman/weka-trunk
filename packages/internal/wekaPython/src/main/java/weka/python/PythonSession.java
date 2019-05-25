@@ -603,7 +603,7 @@ public class PythonSession {
 	 */
 	public static void main(String[] args) {
 		try {
-			if (!PythonSession.initSession("python", true)) {
+			if (!PythonSession.initSession("python3", true)) {
 				System.err.println("Initialization failed!");
 				System.exit(1);
 			}

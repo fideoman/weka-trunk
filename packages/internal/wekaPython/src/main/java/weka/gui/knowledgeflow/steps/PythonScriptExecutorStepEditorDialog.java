@@ -98,7 +98,7 @@ public class PythonScriptExecutorStepEditorDialog extends GOEStepEditorDialog {
     if (!PythonSession.pythonAvailable()) {
       // try initializing
       try {
-        if (!PythonSession.initSession("python",
+        if (!PythonSession.initSession("python3",
           ((PythonScriptExecutor) getStepToEdit()).getDebug())) {
           envEvalResults = PythonSession.getPythonEnvCheckResults();
           m_pyAvailable = false;

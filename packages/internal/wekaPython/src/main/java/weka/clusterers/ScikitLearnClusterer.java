@@ -205,7 +205,7 @@ public class ScikitLearnClusterer extends AbstractClusterer implements
     if (!PythonSession.pythonAvailable()) {
       // try initializing
       try {
-        if (!PythonSession.initSession("python", getDebug())) {
+        if (!PythonSession.initSession("python3", getDebug())) {
           pythonAvailable = false;
         }
       } catch (WekaException ex) {
@@ -349,7 +349,7 @@ public class ScikitLearnClusterer extends AbstractClusterer implements
 
     if (!PythonSession.pythonAvailable()) {
       // try initializing
-      if (!PythonSession.initSession("python", getDebug())) {
+      if (!PythonSession.initSession("python3", getDebug())) {
         String envEvalResults = PythonSession.getPythonEnvCheckResults();
         throw new WekaException("Was unable to start python environment: "
           + envEvalResults);
@@ -483,7 +483,7 @@ public class ScikitLearnClusterer extends AbstractClusterer implements
 
     if (!PythonSession.pythonAvailable()) {
       // try initializing
-      if (!PythonSession.initSession("python", getDebug())) {
+      if (!PythonSession.initSession("python3", getDebug())) {
         String envEvalResults = PythonSession.getPythonEnvCheckResults();
         throw new Exception("Was unable to start python environment: "
           + envEvalResults);

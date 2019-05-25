@@ -122,7 +122,7 @@ public class PythonScriptExecutorCustomizer extends JPanel implements
     if (!PythonSession.pythonAvailable()) {
       // try initializing
       try {
-        if (!PythonSession.initSession("python", m_executor.getDebug())) {
+        if (!PythonSession.initSession("python3", m_executor.getDebug())) {
           envEvalResults = PythonSession.getPythonEnvCheckResults();
           m_pyAvailable = false;
         }
