@@ -335,6 +335,6 @@
 	<classpathentry exported="true" kind="lib" path="weka/lib/jogl-all-natives-windows-amd64.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/jogl-all.jar"/>
 	<classpathentry exported="true" kind="lib" path="weka/lib/commons-lang3-3.9.jar"/>
-	<classpathentry exported="true" kind="lib" path="weka/lib/tigerjython2.jar"/>
+	<classpathentry kind="lib" path="weka/lib/tigerjython2.jar"/>
 	<classpathentry kind="output" path="weka/build/classes"/>
 </classpath>
