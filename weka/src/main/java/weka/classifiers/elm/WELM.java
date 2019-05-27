@@ -239,6 +239,7 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 	 */
 	@Override
 	public void setOptions(String[] options) throws Exception {
+		super.setOptions(options);
 
 		String numberofHiddenNeuronsString = Utils.getOption('N', options);
 		String distanceTrainingTradeoffString = Utils.getOption('C', options);
@@ -254,7 +255,7 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 			this.distanceTrainingTradeoff = 0;
 		}
 		
-		super.setOptions(options);
+		Utils.checkForRemainingOptions(options);
 	}
 
 	/**
@@ -262,7 +263,7 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 	 */
 	@Override
 	public String[] getOptions() {
-		Vector<String> options = new Vector<String>(2);
+		Vector<String> options = new Vector<String>();
 		options.add("-N");
 		options.add("" + this.numberofHiddenNeurons);
 		options.add("-C");
