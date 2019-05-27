@@ -16,6 +16,7 @@ import weka.core.BatchPredictor;
 import weka.core.Capabilities;
 import weka.core.Instances;
 import weka.core.Option;
+import weka.core.OptionHandler;
 import weka.core.TechnicalInformation;
 import weka.core.TechnicalInformationHandler;
 import weka.core.Utils;
@@ -25,7 +26,7 @@ import weka.core.Capabilities.Capability;
 import weka.core.TechnicalInformation.Field;
 import weka.core.TechnicalInformation.Type;
 
-public class WELM extends AbstractClassifier implements BatchPredictor, TechnicalInformationHandler {
+public class WELM extends AbstractClassifier implements BatchPredictor, OptionHandler, TechnicalInformationHandler {
 	/**
 	 * 
 	 */
