@@ -35,8 +35,8 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 	 * Author: Isaac Silva, on 2019/05/26
 	 */
 	
-	private int numberofHiddenNeurons;
-	private int distanceTrainingTradeoff;
+	private int numberofHiddenNeurons = 20;
+	private int distanceTrainingTradeoff = 0;
 	
 	// Shared between Training and Testing stages.
 	private DenseVector bias;
@@ -308,4 +308,20 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
     	
     	return solvedMatrix;
     }
+
+	public int getNumberofHiddenNeurons() {
+		return numberofHiddenNeurons;
+	}
+
+	public void setNumberofHiddenNeurons(int numberofHiddenNeurons) {
+		this.numberofHiddenNeurons = numberofHiddenNeurons;
+	}
+
+	public int getDistanceTrainingTradeoff() {
+		return distanceTrainingTradeoff;
+	}
+
+	public void setDistanceTrainingTradeoff(int distanceTrainingTradeoff) {
+		this.distanceTrainingTradeoff = distanceTrainingTradeoff;
+	}
 }
