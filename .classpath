@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="weka/src/main/java"/>
+	<classpathentry kind="src" path="weka/src/main/resources/weka_clj"/>
+	<classpathentry kind="src" path="weka/src/main/resources/datasets"/>
 	<classpathentry kind="src" path="weka/src/main/resources/jni"/>
 	<classpathentry kind="src" path="weka/src/main/resources/props"/>
 	<classpathentry kind="src" path="weka/src/test/java"/>
