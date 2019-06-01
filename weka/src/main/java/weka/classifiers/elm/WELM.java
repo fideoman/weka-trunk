@@ -6,7 +6,7 @@ import java.util.Vector;
 
 import org.apache.commons.math4.linear.Array2DRowRealMatrix;
 import org.apache.commons.math4.util.FastMath;
-import org.apache.commons.math4.util.MathArrays;
+import org.math.plot.utils.Array;
 
 import no.uib.cipr.matrix.DenseMatrix;
 import no.uib.cipr.matrix.DenseVector;
@@ -177,17 +177,17 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 		DenseMatrix results = new DenseMatrix(preActHtest.numColumns(), this.trainingOutputWeights.numColumns());
 		preActHtest.transAmult(this.trainingOutputWeights, results);		
 		
-		int[] indexArray = MathArrays.sequence(preActHtest.numColumns(), 0, this.trainingOutputWeights.numColumns());
-		Array2DRowRealMatrix doubleResults = new Array2DRowRealMatrix(preActHtest.numColumns(), this.trainingOutputWeights.numColumns());
-		for (int index = 0; index < indexArray.length; index++) {
-			if (index == (indexArray.length - 1)) {
-				doubleResults.setRow(index, MathArrays.copyOfRange(results.getData(), indexArray[index], results.getData().length));
-			} else {
-				doubleResults.setRow(index, MathArrays.copyOfRange(results.getData(), indexArray[index], indexArray[index+1]));
+		// Final output
+		double[][] doubleResults = new double[preActHtest.numColumns()][this.trainingOutputWeights.numColumns()];
+		double[] arrayResults = new double[this.trainingOutputWeights.numColumns()];
+		for (int i = 0; i < preActHtest.numColumns(); i++) {
+			for (int j = 0; j < this.trainingOutputWeights.numColumns(); j++) {
+				arrayResults[j] = results.get(i, j);
 			}
+			doubleResults[i][Array.maxIndex(arrayResults)] = 1.0;
 		}
-		
-		return doubleResults.getData();
+				
+		return doubleResults;
 	}
 
 	/**
@@ -287,13 +287,6 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 	// Solver
     public DenseMatrix getTrainingOutputWeights(DenseMatrix preActH, DenseMatrix weightingMatrix, DenseMatrix trainingClasses) {
     	DenseMatrix hwhTplusCost = (DenseMatrix) Matrices.identity(this.numberofHiddenNeurons).scale(1.0/FastMath.pow(2.0, this.distanceTrainingTradeoff));
-    	//C = A*B
-    	//A.mult(B,C)
-    	// Working example:
-    	// DenseMatrix A = new DenseMatrix(x, y);
-    	// DenseMatrix B = new DenseMatrix(y, z);    
-    	// DenseMatrix C = new DenseMatrix(x, z);
-    	// A.mult(B, C); /* This works, the result gets assigned into C */
     	DenseMatrix hw = new DenseMatrix(preActH.numRows(), preActH.numColumns());
     	preActH.mult(weightingMatrix, hw);
     	DenseMatrix hwhT = new DenseMatrix(hw.numRows(), preActH.numRows());
