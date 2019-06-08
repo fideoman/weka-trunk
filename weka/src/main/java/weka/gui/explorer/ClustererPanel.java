@@ -821,6 +821,7 @@ public class ClustererPanel extends AbstractPerspective implements
                 + Utils.joinOptions(((OptionHandler) m_ClustererEditor
                   .getValue()).getOptions());
           }
+          Instances trainInst = null; // We need this if we want to serialise the model
           try {
             m_Log.logMessage("Started " + cname);
             m_Log.logMessage("Command: " + cmd);
@@ -851,7 +852,7 @@ public class ClustererPanel extends AbstractPerspective implements
               throw new Exception("Unknown test mode");
             }
 
-            Instances trainInst = new Instances(inst);
+            trainInst = new Instances(inst);
             if (m_ClassesToClustersBut.isSelected()) {
               trainInst.setClassIndex(m_ClassCombo.getSelectedIndex());
               inst.setClassIndex(m_ClassCombo.getSelectedIndex());
@@ -1063,8 +1064,10 @@ public class ClustererPanel extends AbstractPerspective implements
 
               ArrayList<Object> vv = new ArrayList<Object>();
               vv.add(fullClusterer);
-              Instances trainHeader = new Instances(m_Instances, 0);
-              vv.add(trainHeader);
+              if (trainInst != null) {
+                Instances trainHeader = new Instances(trainInst, 0);
+                vv.add(trainHeader);
+              }
               if (ignoredAtts != null) {
                 vv.add(ignoredAtts);
               }
