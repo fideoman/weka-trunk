@@ -6,7 +6,6 @@ import java.util.Vector;
 
 import org.apache.commons.math4.linear.Array2DRowRealMatrix;
 import org.apache.commons.math4.util.FastMath;
-import org.math.plot.utils.Array;
 
 import no.uib.cipr.matrix.DenseMatrix;
 import no.uib.cipr.matrix.DenseVector;
@@ -177,15 +176,17 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 		DenseMatrix results = new DenseMatrix(preActHtest.numColumns(), this.trainingOutputWeights.numColumns());
 		preActHtest.transAmult(this.trainingOutputWeights, results);		
 		
-		// Final output
-		double[][] doubleResults = new double[preActHtest.numColumns()][this.trainingOutputWeights.numColumns()];
-		double[] arrayResults = new double[this.trainingOutputWeights.numColumns()];
-		for (int i = 0; i < preActHtest.numColumns(); i++) {
-			for (int j = 0; j < this.trainingOutputWeights.numColumns(); j++) {
-				arrayResults[j] = results.get(i, j);
-			}
-			doubleResults[i][Array.maxIndex(arrayResults)] = 1.0;
-		}
+ 		// Final output
+		double[][] doubleResults = Matrices.getArray(results);
+ 		for (int i = 0; i < preActHtest.numColumns(); i++) {
+			if (doubleResults[i][0] > doubleResults[i][1]) { // This only works on Binary classifiers! 
+				doubleResults[i][0] = 1.0;
+				doubleResults[i][1] = 0.0;
+			} else {
+				doubleResults[i][0] = 0.0;
+				doubleResults[i][1] = 1.0;
+ 			}
+ 		}
 				
 		return doubleResults;
 	}
