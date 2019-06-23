@@ -34,8 +34,8 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 	 * Author: Isaac Silva, on 2019/05/26
 	 */
 	
-	private int numberofHiddenNeurons = 20;
-	private int distanceTrainingTradeoff = 0;
+	private int numberofHiddenNeurons = 30;
+	private int distanceTrainingTradeoff = 4;
 	
 	// Shared between Training and Testing stages.
 	private DenseVector bias;
