@@ -19,8 +19,6 @@ import weka.core.OptionHandler;
 import weka.core.TechnicalInformation;
 import weka.core.TechnicalInformationHandler;
 import weka.core.Utils;
-import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 import weka.core.Capabilities.Capability;
 import weka.core.TechnicalInformation.Field;
 import weka.core.TechnicalInformation.Type;
@@ -29,13 +27,13 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6638080088478953640L;
+	private static final long serialVersionUID = 3710237244094711506L;
 	/**
 	 * Author: Isaac Silva, on 2019/05/26
 	 */
 	
-	private int numberofHiddenNeurons = 30;
-	private int distanceTrainingTradeoff = 4;
+	private int numberofHiddenNeurons = 60;
+	private int distanceTrainingTradeoff = 16;
 	
 	// Shared between Training and Testing stages.
 	private DenseVector bias;
@@ -96,13 +94,6 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 		// The input of buildClassifier will be the TRAIN Dataset
 		
 		Instances data = new Instances(instances); // We should not touch input data.
-		// Replace missing attribute values with the mean.		
-		Filter filter = new ReplaceMissingValues();
-		filter.setInputFormat(data);
-		data = Filter.useFilter(data, filter);
-
-		// The class is totally needed. Delete instance if not found.
-		data.deleteWithMissingClass();
 		
 		// Next line will return Zero if mayority class is the first one
 		// Otherwise, One (Second one).
@@ -163,10 +154,6 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 		// The input of distributionsForInstances will be the TEST Dataset
 		
 		Instances data = new Instances(instances); // We should not touch input data.
-		// Replace missing attribute values with the mean.		
-		Filter filter = new ReplaceMissingValues();
-		filter.setInputFormat(data);
-		data = Filter.useFilter(data, filter);
 		
 		DenseMatrix normalizedTestData = Matrices.normalizeBetweenMinusOnetoOne(instances2DenseMatrix(data));		
 		DenseMatrix preActHtest = (DenseMatrix) this.randomHiddenInputW.transBmultAdd(normalizedTestData, Matrices.repeatVector(data.numInstances(), this.bias));
@@ -176,17 +163,17 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 		DenseMatrix results = new DenseMatrix(preActHtest.numColumns(), this.trainingOutputWeights.numColumns());
 		preActHtest.transAmult(this.trainingOutputWeights, results);		
 		
- 		// Final output
+		// Final output
 		double[][] doubleResults = Matrices.getArray(results);
- 		for (int i = 0; i < preActHtest.numColumns(); i++) {
+		for (int i = 0; i < preActHtest.numColumns(); i++) {
 			if (doubleResults[i][0] > doubleResults[i][1]) { // This only works on Binary classifiers! 
 				doubleResults[i][0] = 1.0;
 				doubleResults[i][1] = 0.0;
 			} else {
 				doubleResults[i][0] = 0.0;
 				doubleResults[i][1] = 1.0;
- 			}
- 		}
+			}
+		}
 				
 		return doubleResults;
 	}
@@ -248,12 +235,12 @@ public class WELM extends AbstractClassifier implements BatchPredictor, OptionHa
 		if (numberofHiddenNeuronsString.length() != 0) {
 			this.numberofHiddenNeurons = Integer.parseInt(numberofHiddenNeuronsString);
 		} else {
-			this.numberofHiddenNeurons = 20;		
+			this.numberofHiddenNeurons = 60;		
 		}
 		if (distanceTrainingTradeoffString.length() != 0) {
 			this.distanceTrainingTradeoff = Integer.parseInt(distanceTrainingTradeoffString);
 		} else {
-			this.distanceTrainingTradeoff = 0;
+			this.distanceTrainingTradeoff = 16;
 		}
 		
 		Utils.checkForRemainingOptions(options);
