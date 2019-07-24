@@ -229,7 +229,7 @@
 	<classpathentry kind="src" path="packages/internal/timeseriesForecasting/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/RPlugin/src/test/resources/wekarefs"/>
 	<classpathentry kind="src" path="packages/internal/wekaPython/src/main/resources/py"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-12">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
