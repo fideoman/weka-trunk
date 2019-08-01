@@ -1,7 +1,8 @@
+
 # General information on database access can be found here:
-# http://weka.wikispaces.com/Databases
+# https://waikato.github.io/weka-wiki/databases/
 #
-# Version: $Revision: 11885 $
+# Version: $Revision$
 
 # The comma-separated list of jdbc drivers to use
 #jdbcDriver=RmiJdbc.RJDriver,jdbc.idbDriver
