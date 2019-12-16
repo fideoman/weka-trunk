@@ -337,7 +337,7 @@
 	<classpathentry kind="lib" path="weka/lib/jogl-all.jar"/>
 	<classpathentry kind="lib" path="weka/lib/commons-lang3-3.9.jar"/>
 	<classpathentry kind="lib" path="weka/lib/tigerjython2.jar"/>
-	<classpathentry kind="lib" path="weka/lib/mtj.jar"/>
 	<classpathentry kind="lib" path="weka/lib/commons-math4-20190423.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/matrix-toolkits-java"/>
 	<classpathentry kind="output" path="weka/build/classes"/>
 </classpath>
