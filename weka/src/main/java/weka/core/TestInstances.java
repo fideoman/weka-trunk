@@ -25,6 +25,7 @@ import weka.core.Capabilities.Capability;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -204,7 +205,7 @@ public class TestInstances implements Cloneable, Serializable, OptionHandler,
   protected int m_Seed = 1;
 
   /** the random number generator */
-  protected Random m_Random = new Random(m_Seed);
+  protected Random m_Random = new XoRoShiRo128PlusRandom(m_Seed);
 
   /** the number of instances */
   protected int m_NumInstances = 20;
@@ -871,7 +872,7 @@ public class TestInstances implements Cloneable, Serializable, OptionHandler,
    */
   public void setSeed(int value) {
     m_Seed = value;
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
   }
 
   /**

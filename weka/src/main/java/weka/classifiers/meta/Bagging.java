@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 import java.util.ArrayList;
@@ -661,7 +662,7 @@ public class Bagging
   @Override
   protected synchronized Instances getTrainingSet(int iteration) throws Exception {
 
-    Random r = new Random(m_Seed + iteration);
+    Random r = new XoRoShiRo128PlusRandom(m_Seed + iteration);
 
     // create the in-bag indicator array if necessary
     if (m_CalcOutOfBag) {
@@ -707,7 +708,7 @@ public class Bagging
 
     super.buildClassifier(m_data);
 
-    m_random = new Random(m_Seed);
+    m_random = new XoRoShiRo128PlusRandom(m_Seed);
 
     m_inBag = null;
     if (m_CalcOutOfBag)

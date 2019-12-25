@@ -25,6 +25,7 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.TimeZone;
 import java.util.Vector;
@@ -385,7 +386,7 @@ public class RandomSplitResultProducer implements ResultProducer,
         train = new Instances(runInstances, 0, trainSize);
         test = new Instances(runInstances, trainSize, testSize);
       } else {
-        Random rand = new Random(run);
+        Random rand = new XoRoShiRo128PlusRandom(run);
         runInstances.randomize(rand);
 
         // Nominal class

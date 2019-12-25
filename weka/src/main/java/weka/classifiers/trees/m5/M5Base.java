@@ -24,6 +24,7 @@ package weka.classifiers.trees.m5;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -462,7 +463,7 @@ public abstract class M5Base extends AbstractClassifier implements
     m_removeUseless.setInputFormat(m_instances);
     m_instances = Filter.useFilter(m_instances, m_removeUseless);
 
-    m_instances.randomize(new Random(1));
+    m_instances.randomize(new XoRoShiRo128PlusRandom(1));
 
     m_ruleSet = new ArrayList<Rule>();
 

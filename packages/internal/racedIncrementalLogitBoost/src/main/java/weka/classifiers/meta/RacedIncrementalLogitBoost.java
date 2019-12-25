@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -724,7 +725,7 @@ public class RacedIncrementalLogitBoost extends
   @Override
   public void buildClassifier(Instances data) throws Exception {
 
-    m_RandomInstance = new Random(m_Seed);
+    m_RandomInstance = new XoRoShiRo128PlusRandom(m_Seed);
 
     Instances boostData;
     int classIndex = data.classIndex();

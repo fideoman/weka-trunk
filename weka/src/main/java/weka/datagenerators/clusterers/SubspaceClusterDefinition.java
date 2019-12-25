@@ -22,6 +22,7 @@
 package weka.datagenerators.clusterers;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;

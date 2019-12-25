@@ -92,7 +92,8 @@ import weka.core.Instances;
  * import weka.core.Capabilities.*;
  * import weka.filters.*;
  * 
- * import java.util.Random;
+ * import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
+import java.util.Random;
  * 
  * public class SimpleStream extends SimpleStreamFilter {
  * 
@@ -118,7 +119,7 @@ import weka.core.Instances;
  *     double[] values = new double[inst.numAttributes() + 1];
  *     for (int n = 0; n &lt; inst.numAttributes(); n++)
  *       values[n] = inst.value(n);
- *     values[values.length - 1] = new Random().nextInt();
+ *     values[values.length - 1] = new XoRoShiRo128PlusRandom().nextInt();
  *     Instance result = new DenseInstance(1, values);
  *     return result;
  *   }

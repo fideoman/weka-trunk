@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1270,7 +1271,7 @@ public class BIRCHCluster extends ClusterGenerator implements
 
   @Override
   public Instances defineDataFormat() throws Exception {
-    Random random = new Random(getSeed());
+    Random random = new XoRoShiRo128PlusRandom(getSeed());
     setRandom(random);
     Instances dataset;
     ArrayList<Attribute> attributes = new ArrayList<Attribute>(3);

@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1130,7 +1131,7 @@ public class OneClassClassifier extends RandomizableSingleClassifierEnhancer
     // remove instances with missing class
     Instances newData = new Instances(data);
 
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
 
     // delete the data that's not of the class we are trying to classify.
     Attribute classAttribute = newData.classAttribute();

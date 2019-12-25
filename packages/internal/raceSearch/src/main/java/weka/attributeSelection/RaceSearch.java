@@ -24,6 +24,7 @@ package weka.attributeSelection;
 import java.util.BitSet;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -945,7 +946,7 @@ public class RaceSearch extends ASSearch implements RankedOutputSearch,
       m_numFolds = 10;
     }
 
-    Random random = new Random(1); // I guess this should really be a parameter?
+    Random random = new XoRoShiRo128PlusRandom(1); // I guess this should really be a parameter?
     m_Instances.randomize(random);
     int[] bestSubset = null;
 
@@ -1028,7 +1029,7 @@ public class RaceSearch extends ASSearch implements RankedOutputSearch,
     // # races, 2 (competitors in each race), # attributes
     char[][][] parallelRaces;
     int numRaces = m_numAttribs - 1;
-    Random r = new Random(42);
+    Random r = new XoRoShiRo128PlusRandom(42);
     int numInstances = data.numInstances();
     Instances trainCV;
     Instances testCV;
@@ -1101,7 +1102,7 @@ public class RaceSearch extends ASSearch implements RankedOutputSearch,
 
         // We want to randomize the data the same way for every
         // learning scheme.
-        trainCV = data.trainCV(numInstances, testIndex, new Random(1));
+        trainCV = data.trainCV(numInstances, testIndex, new XoRoShiRo128PlusRandom(1));
         testCV = data.testCV(numInstances, testIndex);
         testInstance = testCV.instance(0);
         m_theEvaluator.buildEvaluator(trainCV);
@@ -1524,7 +1525,7 @@ public class RaceSearch extends ASSearch implements RankedOutputSearch,
 
       // We want to randomize the data the same way for every
       // learning scheme.
-      trainCV = data.trainCV(m_numFolds, i, new Random(1));
+      trainCV = data.trainCV(m_numFolds, i, new XoRoShiRo128PlusRandom(1));
       testCV = data.testCV(m_numFolds, i);
 
       // loop over the surviving attribute sets building classifiers for this

@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
@@ -357,7 +358,7 @@ public class UnivariateKernelEstimator implements UnivariateDensityEstimator,
   public static void main(String[] args) {
 
     // Get random number generator initialized by system
-    Random r = new Random();
+    Random r = new XoRoShiRo128PlusRandom();
 
     // Create density estimator
     UnivariateKernelEstimator e = new UnivariateKernelEstimator();

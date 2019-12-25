@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -829,7 +830,7 @@ public class RDG1 extends ClassificationGenerator {
   @Override
   public Instances defineDataFormat() throws Exception {
     Instances dataset;
-    Random random = new Random(getSeed());
+    Random random = new XoRoShiRo128PlusRandom(getSeed());
     setRandom(random);
 
     m_DecisionList = new ArrayList<RuleList>();

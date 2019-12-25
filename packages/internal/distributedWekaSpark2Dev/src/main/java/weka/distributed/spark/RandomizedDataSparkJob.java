@@ -55,6 +55,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -991,7 +992,7 @@ public class RandomizedDataSparkJob extends SparkJob implements
 
     logMessage("[Randomly shuffle data] Num slices = " + numFoldSlices);
 
-    final Random random = new Random(seed);
+    final Random random = new XoRoShiRo128PlusRandom(seed);
     for (int i = 0; i < 20; i++) {
       random.nextInt();
     }
@@ -1244,7 +1245,7 @@ public class RandomizedDataSparkJob extends SparkJob implements
     protected List<List<Object>> m_classInstancesBuffer;
 
     /** For randomization */
-    protected Random m_random = new Random(42);
+    protected Random m_random = new XoRoShiRo128PlusRandom(42);
 
     public PhaseTwoStratification(Instances headerNoSummary, int numFoldSlices,
       boolean instancesAsStrings) {

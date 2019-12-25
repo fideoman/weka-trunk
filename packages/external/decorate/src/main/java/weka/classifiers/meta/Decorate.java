@@ -39,6 +39,7 @@ import weka.core.TechnicalInformation.Field;
 import weka.core.TechnicalInformation.Type;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -167,7 +168,7 @@ public class Decorate
     protected double m_ArtSize = 1.0 ;
 
     /** The random number generator. */
-    protected Random m_Random = new Random(0);
+    protected Random m_Random = new XoRoShiRo128PlusRandom(0);
     
     /** Attribute statistics - used for generating artificial examples. */
     protected Vector m_AttributeStats = null;
@@ -495,8 +496,8 @@ public class Decorate
       data.deleteWithMissingClass();
   
 	//initialize random number generator
-	if(m_Seed==-1) m_Random = new Random();
-	else m_Random = new Random(m_Seed);
+	if(m_Seed==-1) m_Random = new XoRoShiRo128PlusRandom();
+	else m_Random = new XoRoShiRo128PlusRandom(m_Seed);
 	
 	int i = 1;//current committee size
 	int numTrials = 1;//number of Decorate iterations 

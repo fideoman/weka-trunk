@@ -30,6 +30,7 @@ import weka.core.Capabilities.Capability;
 import weka.core.TechnicalInformation.Field;
 import weka.core.TechnicalInformation.Type;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**

@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -213,7 +214,7 @@ public class WeightedInstancesHandlerWrapper
     if (resample) {
       if (getDebug())
 	System.err.println(getClass().getName() + ": resampling training data");
-      data = data.resampleWithWeights(new Random(m_Seed));
+      data = data.resampleWithWeights(new XoRoShiRo128PlusRandom(m_Seed));
     }
 
     m_Classifier.buildClassifier(data);

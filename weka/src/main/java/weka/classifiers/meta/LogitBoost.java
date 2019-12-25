@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
@@ -894,7 +895,7 @@ public class LogitBoost extends RandomizableIteratedSingleClassifierEnhancer
 
     m_NumItsPerformed = 0;
     if (m_data == null) {
-      m_RandomInstance = new Random(m_Seed);
+      m_RandomInstance = new XoRoShiRo128PlusRandom(m_Seed);
       int classIndex = data.classIndex();
 
       if (m_Classifier == null) {

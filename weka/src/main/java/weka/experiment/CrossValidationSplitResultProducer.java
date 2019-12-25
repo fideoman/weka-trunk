@@ -21,6 +21,7 @@
 
 package weka.experiment;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Instances;
@@ -196,7 +197,7 @@ public class CrossValidationSplitResultProducer extends
 
     // Randomize on a copy of the original dataset
     Instances runInstances = new Instances(m_Instances);
-    Random random = new Random(run);
+    Random random = new XoRoShiRo128PlusRandom(run);
     runInstances.randomize(random);
     if (runInstances.classAttribute().isNominal()) {
       runInstances.stratify(m_NumFolds);

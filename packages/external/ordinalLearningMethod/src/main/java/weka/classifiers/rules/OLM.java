@@ -26,6 +26,8 @@ import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Evaluation;
 import java.io.*;
 import java.util.*;
+
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import weka.core.*;
 import weka.core.Capabilities.Capability;
 import weka.core.TechnicalInformation.Field;
@@ -117,7 +119,7 @@ implements OptionHandler, TechnicalInformationHandler {
 
   protected int upperBaseLimit = -1;
   protected int randSeed = 0;
-  protected Random rand = new Random(0);
+  protected Random rand = new XoRoShiRo128PlusRandom(0);
 
   protected boolean print_msg = false;
 
@@ -798,7 +800,7 @@ implements OptionHandler, TechnicalInformationHandler {
     // Checks on data not implemented.
 
     // reset random generator to produce the same results each time
-    rand = new Random(0);
+    rand = new XoRoShiRo128PlusRandom(0);
     // Options
     if(print_msg)
       System.out.println("Resolution mode: " + m_resolutionMode);

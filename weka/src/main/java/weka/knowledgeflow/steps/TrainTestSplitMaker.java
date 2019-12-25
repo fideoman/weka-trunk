@@ -31,6 +31,7 @@ import weka.knowledgeflow.StepManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -174,7 +175,7 @@ public class TrainTestSplitMaker extends BaseStep {
     getStepManager().statusMessage("Creating train/test split");
 
     if (!getPreserveOrder()) {
-      dataSet.randomize(new Random(m_seed));
+      dataSet.randomize(new XoRoShiRo128PlusRandom(m_seed));
     }
     int trainSize =
       (int) Math.round(dataSet.numInstances() * m_trainPercentage / 100);

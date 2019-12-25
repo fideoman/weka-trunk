@@ -23,6 +23,7 @@ package weka.attributeSelection;
 
 import java.util.BitSet;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -530,7 +531,7 @@ public class RandomSearch extends ASSearch implements StartSetHandler,
         + "Subset evaluator!");
     }
 
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
 
     if (ASEval instanceof UnsupervisedSubsetEvaluator) {
       m_hasClass = false;

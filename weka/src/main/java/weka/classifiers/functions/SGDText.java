@@ -28,6 +28,7 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1174,7 +1175,7 @@ public class SGDText extends RandomizableClassifier implements
     }
 
     if (data.numInstances() > 0) {
-      data.randomize(new Random(getSeed()));
+      data.randomize(new XoRoShiRo128PlusRandom(getSeed()));
       train(data);
       pruneDictionary(true);
     }

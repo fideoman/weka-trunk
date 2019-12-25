@@ -119,6 +119,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -993,8 +994,8 @@ public class ClustererPanel extends AbstractPerspective implements
 
             case 2: // Percent split
               m_Log.statusMessage("Randomizing instances...");
-              inst.randomize(new Random(1));
-              trainInst.randomize(new Random(1));
+              inst.randomize(new XoRoShiRo128PlusRandom(1));
+              trainInst.randomize(new XoRoShiRo128PlusRandom(1));
               int trainSize = trainInst.numInstances() * percent / 100;
               int testSize = trainInst.numInstances() - trainSize;
               Instances train = new Instances(trainInst, 0, trainSize);

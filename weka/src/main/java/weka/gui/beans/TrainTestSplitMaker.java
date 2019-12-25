@@ -23,6 +23,7 @@ package weka.gui.beans;
 
 import java.io.Serializable;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -281,7 +282,7 @@ public class TrainTestSplitMaker extends AbstractTrainAndTestSetProducer
         @SuppressWarnings("deprecation")
         public void run() {
           try {
-            dataSet.randomize(new Random(m_randomSeed));
+            dataSet.randomize(new XoRoShiRo128PlusRandom(m_randomSeed));
             int trainSize = (int) Math.round(dataSet.numInstances()
               * m_trainPercentage / 100);
             int testSize = dataSet.numInstances() - trainSize;

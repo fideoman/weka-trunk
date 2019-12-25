@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import org.apache.hadoop.conf.Configuration;
@@ -91,7 +92,7 @@ public class RandomizedDataChunkHadoopReducer extends
    * Used for oversampling minority classes to ensure that each data chunk gets
    * one instance of each minority class
    */
-  protected Random m_random = new Random(42);
+  protected Random m_random = new XoRoShiRo128PlusRandom(42);
 
   /** Holds output values */
   protected Text m_outVal = new Text();

@@ -26,6 +26,7 @@ import weka.core.Instances;
 import weka.core.RevisionHandler;
 import weka.core.RevisionUtils;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**

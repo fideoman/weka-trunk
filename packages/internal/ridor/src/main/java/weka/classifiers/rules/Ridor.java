@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -640,7 +641,7 @@ public class Ridor extends AbstractClassifier implements
       m_Antds = new ArrayList<Antd>();
 
       /* Split data into Grow and Prune */
-      m_Random = new Random(m_Seed);
+      m_Random = new XoRoShiRo128PlusRandom(m_Seed);
       data.randomize(m_Random);
       data.stratify(m_Folds);
       Instances growData = data.trainCV(m_Folds, m_Folds - 1, m_Random);
@@ -1448,7 +1449,7 @@ public class Ridor extends AbstractClassifier implements
     int index = data.classIndex();
     m_Cover = data.sumOfWeights();
 
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
 
     /* Create a binary attribute */
     ArrayList<String> binary_values = new ArrayList<String>(2);

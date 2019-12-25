@@ -23,6 +23,7 @@ package weka.associations;
 
 import java.io.Serializable;
 import java.util.Hashtable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Instances;

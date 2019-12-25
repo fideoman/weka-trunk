@@ -34,6 +34,9 @@ import weka.core.TechnicalInformation.Field;
 import weka.core.TechnicalInformation.Type;
 import weka.classifiers.UpdateableClassifier;
 import java.util.*;
+
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
+
 import java.io.Serializable;
 import weka.core.Capabilities;
 import weka.core.OptionHandler;
@@ -175,7 +178,7 @@ public class DMNBtext extends AbstractClassifier
     if (instances.numInstances() == 0)
       return;
     //Iterative update
-    Random random = new Random();
+    Random random = new XoRoShiRo128PlusRandom();
     for (int it = 0; it < m_NumIterations; it++) {
       for (int i = 0; i < instances.numInstances(); i++) {
         updateClassifier(instances.instance(i));

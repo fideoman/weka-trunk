@@ -22,6 +22,7 @@
 package weka.filters.supervised.instance;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -435,7 +436,7 @@ public class StratifiedRemoveFolds extends Filter implements SupervisedFilter,
     if (!isFirstBatchDone()) {
       if (m_Seed > 0) {
         // User has provided a random number seed.
-        getInputFormat().randomize(new Random(m_Seed));
+        getInputFormat().randomize(new XoRoShiRo128PlusRandom(m_Seed));
       }
 
       // Select out a fold

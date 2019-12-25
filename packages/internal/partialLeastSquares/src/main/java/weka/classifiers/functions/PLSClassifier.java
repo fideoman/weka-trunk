@@ -22,6 +22,7 @@ package weka.classifiers.functions;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -325,7 +326,7 @@ public class PLSClassifier extends RandomizableClassifier
     if (resample) {
       if (getDebug())
 	System.err.println(getClass().getName() + ": resampling training data");
-      data = data.resampleWithWeights(new Random(m_Seed));
+      data = data.resampleWithWeights(new XoRoShiRo128PlusRandom(m_Seed));
     }
 
     // can classifier handle the data?

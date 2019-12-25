@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1328,7 +1329,7 @@ public class MLlibClassifierEvaluationSparkJob extends SparkJob implements
 
     public void finalizeTask() {
       m_header.compactify();
-      m_r = new Random(m_seed);
+      m_r = new XoRoShiRo128PlusRandom(m_seed);
       m_header.randomize(m_r);
       if (m_header.classIndex() >= 0 && m_header.classAttribute().isNominal()
         && m_totalFolds > 1) {

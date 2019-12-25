@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -386,7 +387,7 @@ public class BFTree extends RandomizableClassifier implements
     // weights for root nodes of each fold for prepruning and postpruning.
     int expansion = 0;
 
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     Instances cvData = new Instances(data);
     cvData.randomize(random);
     cvData = new Instances(cvData, 0,

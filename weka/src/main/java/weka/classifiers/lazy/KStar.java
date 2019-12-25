@@ -23,6 +23,7 @@ package weka.classifiers.lazy;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -654,8 +655,8 @@ public class KStar
    */
   private void generateRandomClassColomns() {
     
-    Random generator = new Random(42);
-    //    Random generator = new Random();
+    Random generator = new XoRoShiRo128PlusRandom(42);
+    //    Random generator = new XoRoShiRo128PlusRandom();
     m_RandClassCols = new int [NUM_RAND_COLS+1][];
     int [] classvals = classValues();
     for (int i=0; i < NUM_RAND_COLS; i++) {

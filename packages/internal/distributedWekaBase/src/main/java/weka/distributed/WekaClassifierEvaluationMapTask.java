@@ -30,6 +30,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 import java.io.Serializable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -259,7 +260,7 @@ public class WekaClassifierEvaluationMapTask implements Serializable {
     m_trainingHeader.compactify();
 
     Instances test = m_trainingHeader;
-    Random r = new Random(m_seed);
+    Random r = new XoRoShiRo128PlusRandom(m_seed);
     test.randomize(r);
     if (test.classAttribute().isNominal() && m_totalFolds > 1) {
       test.stratify(m_totalFolds);

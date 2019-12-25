@@ -23,6 +23,7 @@ package weka.classifiers.functions;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
@@ -271,7 +272,7 @@ public abstract class RBFModel extends RandomizableClassifier implements Technic
     data.deleteWithMissingClass();
 
     // Make sure data is shuffled
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     if (data.numInstances() > 2) {
       random = data.getRandomNumberGenerator(m_Seed);
     }

@@ -23,6 +23,7 @@ package weka.classifiers.functions.supportVector;
 
 import java.io.Serializable;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -146,7 +147,7 @@ public class RegOptimizer implements OptionHandler, Serializable,
    */
   public RegOptimizer() {
     super();
-    m_random = new Random(m_nSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_nSeed);
   }
 
   /**
@@ -305,7 +306,7 @@ public class RegOptimizer implements OptionHandler, Serializable,
       m_target[i] = data.instance(i).classValue();
     }
 
-    m_random = new Random(m_nSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_nSeed);
 
     // initialize alpha and alpha* array to all zero
     m_alpha = new double[m_target.length];

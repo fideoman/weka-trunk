@@ -22,6 +22,7 @@
 package weka.filters.unsupervised.instance;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -216,7 +217,7 @@ public class Randomize extends Filter implements UnsupervisedFilter,
 
     super.setInputFormat(instanceInfo);
     setOutputFormat(instanceInfo);
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
     return true;
   }
 

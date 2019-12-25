@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.converters.ArffLoader.ArffReader;
@@ -734,7 +735,7 @@ RevisionHandler {
    */
   public Random getRandomNumberGenerator(long seed) {
 
-    Random r = new Random(seed);
+    Random r = new XoRoShiRo128PlusRandom(seed);
     r.setSeed(instance(r.nextInt(numInstances())).toStringNoWeight().hashCode()
       + seed);
     return r;
@@ -2333,7 +2334,7 @@ RevisionHandler {
   public static void test(String[] argv) {
 
     Instances instances, secondInstances, train, test, empty;
-    Random random = new Random(2);
+    Random random = new XoRoShiRo128PlusRandom(2);
     Reader reader;
     int start, num;
     ArrayList<Attribute> testAtts;
@@ -2493,7 +2494,7 @@ RevisionHandler {
         instances.stratify(3);
       }
       for (j = 0; j < 3; j++) {
-        train = instances.trainCV(3, j, new Random(1));
+        train = instances.trainCV(3, j, new XoRoShiRo128PlusRandom(1));
         test = instances.testCV(3, j);
 
         // Print all instances and their weights (and the sum of weights).
@@ -2629,7 +2630,7 @@ RevisionHandler {
         && (args[0].toLowerCase().equals("randomize"))) {
         DataSource source = new DataSource(args[2]);
         i = source.getDataSet();
-        i.randomize(new Random(Integer.parseInt(args[1])));
+        i.randomize(new XoRoShiRo128PlusRandom(Integer.parseInt(args[1])));
         System.out.println(i);
       }
       // wrong parameters or help

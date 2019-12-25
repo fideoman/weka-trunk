@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Iterator;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -113,7 +114,7 @@ public class MiddleOutConstructor extends BallTreeConstructor implements
    * The random number generator for selecting the first anchor point randomly
    * (if selecting randomly).
    */
-  protected Random rand = new Random(m_RSeed);
+  protected Random rand = new XoRoShiRo128PlusRandom(m_RSeed);
 
   /**
    * The radius of the smallest ball enclosing all the data points.

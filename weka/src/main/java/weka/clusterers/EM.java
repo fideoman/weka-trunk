@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 import java.util.concurrent.Callable;
@@ -1535,7 +1536,7 @@ NumberOfClustersRequestable, WeightedInstancesHandler {
         // theInstances.stratify(10);
 
         CVincreased = false;
-        cvr = new Random(getSeed());
+        cvr = new XoRoShiRo128PlusRandom(getSeed());
         trainCopy = new Instances(m_theInstances);
         trainCopy.randomize(cvr);
         templl = 0.0;
@@ -1545,7 +1546,7 @@ NumberOfClustersRequestable, WeightedInstancesHandler {
             break CLUSTER_SEARCH;
           }
           Instances cvTest = trainCopy.testCV(numFolds, i);
-          m_rr = new Random(seed);
+          m_rr = new XoRoShiRo128PlusRandom(seed);
           for (int z = 0; z < 10; z++) {
             m_rr.nextDouble();
           }
@@ -1774,7 +1775,7 @@ NumberOfClustersRequestable, WeightedInstancesHandler {
       System.out.println("Seed: " + getSeed());
     }
 
-    m_rr = new Random(getSeed());
+    m_rr = new XoRoShiRo128PlusRandom(getSeed());
 
     // throw away numbers to avoid problem of similar initial numbers
     // from a similar seed
@@ -1796,7 +1797,7 @@ NumberOfClustersRequestable, WeightedInstancesHandler {
     if (m_initialNumClusters == -1) {
       if (m_theInstances.numInstances() > 9) {
         CVClusters();
-        m_rr = new Random(getSeed());
+        m_rr = new XoRoShiRo128PlusRandom(getSeed());
         for (int i = 0; i < 10; i++) {
           m_rr.nextDouble();
         }
@@ -1984,7 +1985,7 @@ NumberOfClustersRequestable, WeightedInstancesHandler {
         ex.printStackTrace();
         seed++;
         restartCount++;
-        m_rr = new Random(seed);
+        m_rr = new XoRoShiRo128PlusRandom(seed);
         for (int z = 0; z < 10; z++) {
           m_rr.nextDouble();
           m_rr.nextInt();

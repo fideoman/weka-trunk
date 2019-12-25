@@ -68,6 +68,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -133,7 +134,7 @@ public class MatrixPanel extends JPanel {
   protected JSlider m_jitter = new JSlider(0, 20, 0);
 
   /** For adding random jitter */
-  private final Random rnd = new Random();
+  private final Random rnd = new XoRoShiRo128PlusRandom();
 
   /** Array containing precalculated jitter values */
   private int jitterVals[][];
@@ -545,7 +546,7 @@ public class MatrixPanel extends JPanel {
         m_clearOSIPlottedCells = true;
       }
       inst = new Instances(m_data, 0, m_data.numInstances());
-      inst.randomize(new Random(Integer.parseInt(m_rseed.getText())));
+      inst.randomize(new XoRoShiRo128PlusRandom(Integer.parseInt(m_rseed.getText())));
 
       // System.err.println("gettingPercent: " +
       // Math.round(

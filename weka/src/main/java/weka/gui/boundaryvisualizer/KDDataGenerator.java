@@ -22,6 +22,7 @@
 package weka.gui.boundaryvisualizer;
 
 import java.io.Serializable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Attribute;
@@ -104,7 +105,7 @@ public class KDDataGenerator implements DataGenerator, Serializable {
    */
   @Override
   public void buildGenerator(Instances inputInstances) throws Exception {
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
 
     m_instances = inputInstances;
     // m_standardDeviations = new double[m_instances.numAttributes()]; NOT USED
@@ -316,7 +317,7 @@ public class KDDataGenerator implements DataGenerator, Serializable {
   @Override
   public void setSeed(int seed) {
     m_seed = seed;
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
   }
 
   /**

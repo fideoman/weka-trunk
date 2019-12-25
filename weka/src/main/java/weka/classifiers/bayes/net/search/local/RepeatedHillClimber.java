@@ -23,6 +23,7 @@ package weka.classifiers.bayes.net.search.local;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -110,7 +111,7 @@ public class RepeatedHillClimber extends HillClimber {
   @Override
   protected void search(BayesNet bayesNet, Instances instances)
     throws Exception {
-    m_random = new Random(getSeed());
+    m_random = new XoRoShiRo128PlusRandom(getSeed());
     // keeps track of score pf best structure found so far
     double fBestScore;
     double fCurrentScore = 0.0;

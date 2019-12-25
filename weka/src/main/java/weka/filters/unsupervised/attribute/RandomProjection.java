@@ -23,6 +23,7 @@ package weka.filters.unsupervised.attribute;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -677,7 +678,7 @@ public class RandomProjection extends Filter implements UnsupervisedFilter,
       newFormat.setClassIndex(attributes.size() - 1);
     }
 
-    m_random = new Random(m_rndmSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_rndmSeed);
 
     m_rmatrix = new double[m_k][currentFormat.numAttributes()];
     if (m_distribution == GAUSSIAN) {

@@ -26,6 +26,7 @@ import java.io.FileReader;
 import java.io.Reader;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -578,7 +579,7 @@ public class BVDecompose
       throw new Exception("The dataset must contain at least "
           + (2 * m_TrainPoolSize) + " instances");
     }
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     data.randomize(random);
     Instances trainPool = new Instances(data, 0, m_TrainPoolSize);
     Instances test = new Instances(data, m_TrainPoolSize,

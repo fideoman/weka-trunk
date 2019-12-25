@@ -23,6 +23,7 @@ package weka.classifiers.meta;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -490,7 +491,7 @@ public class AttributeSelectedClassifier
     if (ok) {
       if (!(m_Evaluator instanceof WeightedInstancesHandler) || 
           !(m_Classifier instanceof WeightedInstancesHandler)) {
-        Random r = new Random(1);
+        Random r = new XoRoShiRo128PlusRandom(1);
         for (int i = 0; i < 10; i++) {
           r.nextDouble();
         }

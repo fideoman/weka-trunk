@@ -52,6 +52,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.concurrent.Future;
 
@@ -1074,7 +1075,7 @@ public class BoundaryPlotter extends BaseStep implements DataCollector {
       result.m_rowNumber = m_rowNum;
       result.m_rowProbs = new double[m_imageWidth][0];
 
-      m_random = new Random(m_rowNum * 11);
+      m_random = new XoRoShiRo128PlusRandom(m_rowNum * 11);
       m_dataGenerator.setSeed(m_rowNum * 11);
 
       m_numOfSamplesPerGenerator =

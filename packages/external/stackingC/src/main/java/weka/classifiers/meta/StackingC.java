@@ -34,6 +34,8 @@ import weka.filters.unsupervised.attribute.Remove;
 
 import java.util.*;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
+
 /**
  <!-- globalinfo-start -->
  * Implements StackingC (more efficient version of stacking).<br/>
@@ -574,7 +576,7 @@ public class StackingC
     m_BaseFormat = new Instances(data, 0);
     newData.deleteWithMissingClass();
 
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     newData.randomize(random);
     if (newData.classAttribute().isNominal()) {
       newData.stratify(m_NumFolds);

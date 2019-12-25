@@ -24,6 +24,7 @@ package weka.classifiers;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1329,7 +1330,7 @@ public class CheckClassifier extends CheckScheme {
       for (int i = 0; i < train.numInstances(); i++) {
         train.instance(i).setWeight(0);
       }
-      Random random = new Random(1);
+      Random random = new XoRoShiRo128PlusRandom(1);
       for (int i = 0; i < train.numInstances() / 2; i++) {
         int inst = random.nextInt(train.numInstances());
         int weight = random.nextInt(10) + 1;

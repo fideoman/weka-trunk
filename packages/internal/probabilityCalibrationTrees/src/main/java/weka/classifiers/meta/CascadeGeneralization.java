@@ -23,6 +23,7 @@ package weka.classifiers.meta;
 
 import java.util.*;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.RandomizableParallelMultipleClassifiersCombiner;
@@ -488,7 +489,7 @@ public class CascadeGeneralization
         // can classifier handle the data?
         getCapabilities().testWithFail(data);
 
-        Random random = new Random(m_Seed);
+        Random random = new XoRoShiRo128PlusRandom(m_Seed);
 
         if (m_MetaClassifier == null) {
             throw new IllegalArgumentException("No meta classifier has been set");

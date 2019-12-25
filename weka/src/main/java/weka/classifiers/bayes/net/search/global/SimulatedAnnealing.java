@@ -23,6 +23,7 @@ package weka.classifiers.bayes.net.search.global;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -163,7 +164,7 @@ public class SimulatedAnnealing extends GlobalScoreSearchAlgorithm implements
    */
   @Override
   public void search(BayesNet bayesNet, Instances instances) throws Exception {
-    m_random = new Random(m_nSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_nSeed);
 
     // determine base scores
     double fCurrentScore = calcScore(bayesNet);

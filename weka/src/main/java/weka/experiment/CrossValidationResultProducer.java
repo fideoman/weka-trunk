@@ -25,6 +25,7 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.TimeZone;
 import java.util.Vector;
@@ -328,7 +329,7 @@ public class CrossValidationResultProducer implements ResultProducer,
     }
     /*
      * // Randomize on a copy of the original dataset Instances runInstances =
-     * new Instances(m_Instances); runInstances.randomize(new Random(run)); if
+     * new Instances(m_Instances); runInstances.randomize(new XoRoShiRo128PlusRandom(run)); if
      * (runInstances.classAttribute().isNominal()) {
      * runInstances.stratify(m_NumFolds); }
      */
@@ -373,7 +374,7 @@ public class CrossValidationResultProducer implements ResultProducer,
     }
     // Randomize on a copy of the original dataset
     Instances runInstances = new Instances(m_Instances);
-    Random random = new Random(run);
+    Random random = new XoRoShiRo128PlusRandom(run);
     runInstances.randomize(random);
     if (runInstances.classAttribute().isNominal()) {
       runInstances.stratify(m_NumFolds);

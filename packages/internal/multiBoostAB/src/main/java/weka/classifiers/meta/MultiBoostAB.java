@@ -47,6 +47,7 @@ package weka.classifiers.meta;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -375,7 +376,7 @@ public class MultiBoostAB extends AdaBoostM1 implements
   @Override
   public void buildClassifier(Instances training) throws Exception {
 
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
 
     super.buildClassifier(training);
 

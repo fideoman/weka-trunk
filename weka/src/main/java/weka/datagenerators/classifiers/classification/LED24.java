@@ -23,6 +23,7 @@ package weka.datagenerators.classifiers.classification;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -363,7 +364,7 @@ public class LED24 extends ClassificationGenerator implements
     int i;
     int n;
 
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
 
     // number of examples is the same as given per option
     setNumExamplesAct(getNumExamples());
@@ -453,7 +454,7 @@ public class LED24 extends ClassificationGenerator implements
     int i;
 
     result = new Instances(m_DatasetFormat, 0);
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
 
     for (i = 0; i < getNumExamplesAct(); i++) {
       result.add(generateExample());

@@ -31,6 +31,7 @@ import weka.knowledgeflow.StepManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -164,7 +165,7 @@ public class CrossValidationFoldMaker extends BaseStep {
     getStepManager().logBasic("Creating cross-validation folds");
     getStepManager().statusMessage("Creating cross-validation folds");
 
-    Random random = new Random(m_seed);
+    Random random = new XoRoShiRo128PlusRandom(m_seed);
     if (!getPreserveOrder()) {
       dataSet.randomize(random);
     }

@@ -21,6 +21,7 @@
 
 package weka.gui.boundaryvisualizer;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.Classifier;
@@ -231,7 +232,7 @@ public class RemoteBoundaryVisualizerSubTask implements Task {
   @Override
   public void execute() {
 
-    m_random = new Random(m_rowNumber * 11);
+    m_random = new XoRoShiRo128PlusRandom(m_rowNumber * 11);
     m_dataGenerator.setSeed(m_rowNumber * 11);
     m_result = new RemoteResult(m_rowNumber, m_panelWidth);
     m_status.setTaskResult(m_result);

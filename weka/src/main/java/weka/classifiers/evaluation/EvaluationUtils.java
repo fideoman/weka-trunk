@@ -22,6 +22,7 @@
 package weka.classifiers.evaluation;
 
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.Classifier;
@@ -66,7 +67,7 @@ public class EvaluationUtils implements RevisionHandler {
 
     ArrayList<Prediction> predictions = new ArrayList<Prediction>();
     Instances runInstances = new Instances(data);
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     runInstances.randomize(random);
     if (runInstances.classAttribute().isNominal() && (numFolds > 1)) {
       runInstances.stratify(numFolds);

@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 import java.util.concurrent.Callable;
@@ -642,7 +643,7 @@ public class SimpleKMeans extends RandomizableClusterer implements
 
     m_DistanceFunction.setInstances(instances);
 
-    Random RandomO = new Random(getSeed());
+    Random RandomO = new XoRoShiRo128PlusRandom(getSeed());
     int instIndex;
     HashMap<DecisionTableHashKey, Integer> initC =
       new HashMap<DecisionTableHashKey, Integer>();
@@ -889,7 +890,7 @@ public class SimpleKMeans extends RandomizableClusterer implements
    * @throws Exception if a problem occurs
    */
   protected void kMeansPlusPlusInit(Instances data) throws Exception {
-    Random randomO = new Random(getSeed());
+    Random randomO = new XoRoShiRo128PlusRandom(getSeed());
     HashMap<DecisionTableHashKey, String> initC =
       new HashMap<DecisionTableHashKey, String>();
 

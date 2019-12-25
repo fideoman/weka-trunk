@@ -24,6 +24,7 @@ package weka.classifiers.meta;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -300,7 +301,7 @@ public class ThresholdSelector extends RandomizableSingleClassifierEnhancer
       Instances trainData = null,
       evalData = null;
       Instances data = new Instances(instances);
-      Random random = new Random(m_Seed);
+      Random random = new XoRoShiRo128PlusRandom(m_Seed);
       data.randomize(random);
       data.stratify(numFolds);
 

@@ -25,6 +25,7 @@ import weka.core.RevisionUtils;
 import weka.core.matrix.DoubleVector;
 import weka.core.matrix.Maths;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -439,8 +440,8 @@ public class ChisqMixture
     double ncp2 = 10; 
     double mu1 = Math.sqrt( ncp1 );
     double mu2 = Math.sqrt( ncp2 );
-    DoubleVector a = Maths.rnorm( n1, mu1, 1, new Random() );
-    a = a.cat( Maths.rnorm(n2, mu2, 1, new Random()) );
+    DoubleVector a = Maths.rnorm( n1, mu1, 1, new XoRoShiRo128PlusRandom() );
+    a = a.cat( Maths.rnorm(n2, mu2, 1, new XoRoShiRo128PlusRandom()) );
     DoubleVector aNormal = a;
     a = a.square();
     a.sort();

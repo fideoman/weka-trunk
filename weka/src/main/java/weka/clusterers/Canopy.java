@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -746,7 +747,7 @@ public class Canopy extends RandomizableClusterer implements
       && m_trainingData != null && m_trainingData.numInstances() > 0) {
 
       // make up the difference with randomly selected instances (if possible)
-      Random r = new Random(getSeed());
+      Random r = new XoRoShiRo128PlusRandom(getSeed());
       for (int i = 0; i < 10; i++) {
         r.nextInt();
       }
@@ -917,7 +918,7 @@ public class Canopy extends RandomizableClusterer implements
         m_missingValuesReplacer.setInputFormat(data);
         data = Filter.useFilter(data, m_missingValuesReplacer);
       }
-      Random r = new Random(getSeed());
+      Random r = new XoRoShiRo128PlusRandom(getSeed());
       for (int i = 0; i < 10; i++) {
         r.nextInt();
       }

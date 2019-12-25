@@ -24,6 +24,7 @@ package weka.datagenerators.clusterers;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -614,7 +615,7 @@ public class SubspaceCluster extends ClusterGenerator {
 
     checkCoverage();
 
-    Random random = new Random(getSeed());
+    Random random = new XoRoShiRo128PlusRandom(getSeed());
     setRandom(random);
     Instances dataset;
     ArrayList<Attribute> attributes = new ArrayList<Attribute>(3);

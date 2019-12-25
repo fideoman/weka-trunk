@@ -65,6 +65,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -1163,7 +1164,7 @@ public class VisualizePanel extends PrintablePanel {
 
       m_plotInstances = inst;
       if (m_splitListener != null) {
-        m_plotInstances.randomize(new Random());
+        m_plotInstances.randomize(new XoRoShiRo128PlusRandom());
       }
       m_xIndex = 0;
       m_yIndex = 0;

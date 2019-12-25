@@ -22,6 +22,7 @@
 package weka.attributeSelection;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -660,7 +661,7 @@ public class ReliefFAttributeEval extends ASEvaluation implements
   public void buildEvaluator(Instances data) throws Exception {
 
     int z, totalInstances;
-    Random r = new Random(m_seed);
+    Random r = new XoRoShiRo128PlusRandom(m_seed);
 
     // can evaluator handle data?
     getCapabilities().testWithFail(data);

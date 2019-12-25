@@ -55,6 +55,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.stream.Stream;
 import java.util.zip.GZIPInputStream;
@@ -1705,7 +1706,7 @@ public class Evaluation implements Summarizable, RevisionHandler, Serializable {
       } else if (splitPercentage > 0) { // CASE 2: PERCENTAGE SPLIT
         Instances tmpInst = new DataSource(trainFileName).getDataSet(actualClassIndex);
         if (!preserveOrder) {
-          tmpInst.randomize(new Random(seed));
+          tmpInst.randomize(new XoRoShiRo128PlusRandom(seed));
         }
         int trainSize = (int) Math.round(tmpInst.numInstances() * splitPercentage / 100);
         int testSize = tmpInst.numInstances() - trainSize;
@@ -1717,7 +1718,7 @@ public class Evaluation implements Summarizable, RevisionHandler, Serializable {
         predsBuff.append("\n=== Predictions on test split ===\n\n");
         classificationOutput.print(classifier, testInst);
       } else if (!noCrossValidation) { // CASE 3: CROSS-VALIDATION
-        Random random = new Random(seed);
+        Random random = new XoRoShiRo128PlusRandom(seed);
         Evaluation testingEvaluation = new Evaluation(new Instances(template, 0), costMatrix);
         if (classifier instanceof weka.classifiers.misc.InputMappedClassifier) {
           testingEvaluation = new Evaluation(new Instances(mappedClassifierHeader, 0), costMatrix);
@@ -1867,7 +1868,7 @@ public class Evaluation implements Summarizable, RevisionHandler, Serializable {
 
         Instances tmpInst = new DataSource(trainFileName).getDataSet(actualClassIndex);
         if (!preserveOrder) {
-          tmpInst.randomize(new Random(seed));
+          tmpInst.randomize(new XoRoShiRo128PlusRandom(seed));
         }
         int trainSize = (int) Math.round(tmpInst.numInstances() * splitPercentage / 100);
         int testSize = tmpInst.numInstances() - trainSize;
@@ -1935,7 +1936,7 @@ public class Evaluation implements Summarizable, RevisionHandler, Serializable {
           }
         }
 
-        Random random = new Random(seed);
+        Random random = new XoRoShiRo128PlusRandom(seed);
         // use untrained (!) classifier for cross-validation
         classifier = AbstractClassifier.makeCopy(classifierBackup);
         testTimeStart = System.currentTimeMillis();

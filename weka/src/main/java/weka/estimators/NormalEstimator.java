@@ -254,7 +254,7 @@ public class NormalEstimator extends Estimator implements IncrementalEstimator,
     NormalEstimator one = new NormalEstimator(0.01);
     NormalEstimator two = new NormalEstimator(0.01);
 
-    java.util.Random r = new java.util.Random(1);
+    it.unimi.dsi.util.XoRoShiRo128PlusRandom r = new it.unimi.dsi.util.XoRoShiRo128PlusRandom(1);
 
     for (int i = 0; i < 100; i++) {
       double z = r.nextDouble();

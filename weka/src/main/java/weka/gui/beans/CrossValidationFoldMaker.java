@@ -23,6 +23,7 @@ package weka.gui.beans;
 
 import java.io.Serializable;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -237,7 +238,7 @@ public class CrossValidationFoldMaker extends AbstractTrainAndTestSetProducer
         public void run() {
           boolean errorOccurred = false;
           try {
-            Random random = new Random(getSeed());
+            Random random = new XoRoShiRo128PlusRandom(getSeed());
             if (!m_preserveOrder) {
               dataSet.randomize(random);
             }

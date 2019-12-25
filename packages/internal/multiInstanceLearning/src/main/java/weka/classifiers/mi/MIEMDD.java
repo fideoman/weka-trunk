@@ -24,6 +24,7 @@ package weka.classifiers.mi;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -546,7 +547,7 @@ public class MIEMDD extends RandomizableClassifier implements OptionHandler,
     }
 
     // random pick 3 positive bags
-    Random r = new Random(getSeed());
+    Random r = new XoRoShiRo128PlusRandom(getSeed());
     ArrayList<Integer> index = new ArrayList<Integer>();
     int n1, n2, n3;
     do {

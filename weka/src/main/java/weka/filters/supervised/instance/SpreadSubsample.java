@@ -23,6 +23,7 @@ package weka.filters.supervised.instance;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -538,7 +539,7 @@ public class SpreadSubsample extends Filter implements SupervisedFilter,
     }
 
     // Sample without replacement
-    Random random = new Random(m_RandomSeed);
+    Random random = new XoRoShiRo128PlusRandom(m_RandomSeed);
     Hashtable<String, String> t = new Hashtable<String, String>();
     for (int j = 0; j < new_counts.length; j++) {
       double newWeight = 1.0;

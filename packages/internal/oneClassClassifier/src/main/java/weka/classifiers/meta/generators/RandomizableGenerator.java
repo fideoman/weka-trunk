@@ -22,6 +22,7 @@ package weka.classifiers.meta.generators;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -41,7 +42,7 @@ public abstract class RandomizableGenerator extends Generator {
   private static final long serialVersionUID = -4182619078970023472L;
 
   /** The random number generator. */
-  protected Random m_Random = new Random(1);
+  protected Random m_Random = new XoRoShiRo128PlusRandom(1);
 
   /** The seed to the random number generator. */
   protected long m_Seed = 1;
@@ -110,7 +111,7 @@ public abstract class RandomizableGenerator extends Generator {
    */
   public void setSeed(long value) {
     m_Seed = value;
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
   }
 
   /**

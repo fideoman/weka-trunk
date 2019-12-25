@@ -24,6 +24,7 @@ package weka.core;
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -70,7 +71,7 @@ public class WeightedReservoirSample implements
       new PriorityQueue<InstanceHolder>(m_sampleSize,
         new InstanceHolderComparator());
 
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
     for (int i = 0; i < 100; i++) {
       m_random.nextDouble();
     }

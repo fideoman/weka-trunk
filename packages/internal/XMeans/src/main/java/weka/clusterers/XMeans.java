@@ -29,6 +29,7 @@ import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -439,7 +440,7 @@ public class XMeans extends RandomizableClusterer implements
     m_Instances = Filter.useFilter(data, m_ReplaceMissingFilter);
 
     // initialize random function
-    Random random0 = new Random(m_Seed);
+    Random random0 = new XoRoShiRo128PlusRandom(m_Seed);
 
     // num of clusters to start with
     m_NumClusters = m_MinNumClusters;

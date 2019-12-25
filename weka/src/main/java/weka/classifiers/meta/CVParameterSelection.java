@@ -24,6 +24,7 @@ package weka.classifiers.meta;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -373,7 +374,7 @@ public class CVParameterSelection
 
         // We want to randomize the data the same way for every 
         // learning scheme.
-        Instances train = trainData.trainCV(m_NumFolds, j, new Random(1));
+        Instances train = trainData.trainCV(m_NumFolds, j, new XoRoShiRo128PlusRandom(1));
         Instances test = trainData.testCV(m_NumFolds, j);
         copiedClassifier.buildClassifier(train);
         evaluation.setPriors(train);
@@ -587,7 +588,7 @@ public class CVParameterSelection
     m_InitOptions = ((OptionHandler)m_Classifier).getOptions();
     m_BestPerformance = -99;
     m_NumAttributes = trainData.numAttributes();
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     trainData.randomize(random);
     m_TrainFoldSize = trainData.trainCV(m_NumFolds, 0).numInstances();
 

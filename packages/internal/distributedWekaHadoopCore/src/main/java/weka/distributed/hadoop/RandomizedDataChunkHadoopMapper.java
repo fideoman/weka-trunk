@@ -22,6 +22,7 @@
 package weka.distributed.hadoop;
 
 import java.io.IOException;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import org.apache.hadoop.conf.Configuration;
@@ -122,9 +123,9 @@ public class RandomizedDataChunkHadoopMapper extends
 
         String seedS = Utils.getOption("seed", taskOpts);
         if (!DistributedJobConfig.isEmpty(seedS)) {
-          m_random = new Random(Long.parseLong(seedS));
+          m_random = new XoRoShiRo128PlusRandom(Long.parseLong(seedS));
         } else {
-          m_random = new Random(1L);
+          m_random = new XoRoShiRo128PlusRandom(1L);
         }
 
         // throw away the first few random numbers because

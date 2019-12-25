@@ -23,6 +23,7 @@ package weka.filters.unsupervised.instance;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -458,7 +459,7 @@ public class Resample extends Filter implements UnsupervisedFilter,
     Instances data = getInputFormat();
     int numEligible = data.numInstances();
     int sampleSize = (int) (numEligible * m_SampleSizePercent / 100);
-    Random random = new Random(m_RandomSeed);
+    Random random = new XoRoShiRo128PlusRandom(m_RandomSeed);
 
     if (getNoReplacement()) {
 

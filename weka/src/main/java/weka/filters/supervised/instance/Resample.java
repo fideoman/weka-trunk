@@ -23,6 +23,7 @@ package weka.filters.supervised.instance;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -572,7 +573,7 @@ public class Resample extends Filter
     }
 
     // Sample data
-    Random random = new Random(m_RandomSeed);
+    Random random = new XoRoShiRo128PlusRandom(m_RandomSeed);
     if (!getNoReplacement()) {
       for (int i = 0; i < data.numClasses(); i++) {
         int numEligible = (int)numInstancesPerClass[i];

@@ -22,6 +22,7 @@
 package weka.classifiers.meta;
 
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.AbstractClassifier;

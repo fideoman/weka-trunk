@@ -18,6 +18,7 @@ import weka.core.RevisionHandler;
 import weka.core.RevisionUtils;
 import weka.core.Statistics;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**

@@ -24,6 +24,7 @@ package weka.estimators;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -443,7 +444,7 @@ Serializable {
   protected boolean m_Debug = false;
 
   /** The random number generator. */
-  protected Random m_Random = new Random(m_Seed);
+  protected Random m_Random = new XoRoShiRo128PlusRandom(m_Seed);
 
   /**
    * Returns a string describing the estimator.
@@ -533,7 +534,7 @@ Serializable {
   public void setSeed(int seed) {
 
     m_Seed = seed;
-    m_Random = new Random(seed);
+    m_Random = new XoRoShiRo128PlusRandom(seed);
   }
 
   /**
@@ -1054,7 +1055,7 @@ Serializable {
   public static void main(String[] args) throws Exception {
 
     // Get random number generator initialized by system
-    Random r = new Random();
+    Random r = new XoRoShiRo128PlusRandom();
 
     // Create density estimator
     UnivariateMixtureEstimator e = new UnivariateMixtureEstimator();

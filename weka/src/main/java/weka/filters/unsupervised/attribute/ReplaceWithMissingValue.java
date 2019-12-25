@@ -27,6 +27,7 @@ import weka.filters.UnsupervisedFilter;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -466,7 +467,7 @@ public class ReplaceWithMissingValue extends SimpleBatchFilter
     }
 
     Instances newData = new Instances(instances, instances.numInstances());
-    Random random = new Random(getSeed());
+    Random random = new XoRoShiRo128PlusRandom(getSeed());
 
     m_Cols.setUpper(newData.numAttributes() - 1);
     for (Instance inst : instances) {

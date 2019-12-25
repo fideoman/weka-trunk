@@ -56,6 +56,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -1893,7 +1894,7 @@ public class MultilayerPerceptronCS
     i = new Instances(i);
     
     //modCS.S Moved randomizer up, so only order of primary data is randomized.    
-    m_random = new Random(m_randomSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_randomSeed);
     i.randomize(m_random);
     
     //modCS.S, add secondary instances to primary instances, and replicate 

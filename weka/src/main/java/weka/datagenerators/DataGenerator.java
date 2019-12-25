@@ -28,6 +28,7 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Hashtable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -520,7 +521,7 @@ public abstract class DataGenerator implements OptionHandler, Randomizable,
   @Override
   public void setSeed(int newSeed) {
     m_Seed = newSeed;
-    m_Random = new Random(newSeed);
+    m_Random = new XoRoShiRo128PlusRandom(newSeed);
   }
 
   /**
@@ -540,7 +541,7 @@ public abstract class DataGenerator implements OptionHandler, Randomizable,
    */
   public Random getRandom() {
     if (m_Random == null) {
-      m_Random = new Random(getSeed());
+      m_Random = new XoRoShiRo128PlusRandom(getSeed());
     }
 
     return m_Random;

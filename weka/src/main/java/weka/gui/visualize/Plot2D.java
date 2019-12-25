@@ -40,6 +40,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -164,7 +165,7 @@ public class Plot2D extends JPanel {
   protected int m_JitterVal = 0;
 
   /** random values for perterbing the data points */
-  protected Random m_JRand = new Random(0);
+  protected Random m_JRand = new XoRoShiRo128PlusRandom(0);
 
   /** Constructor */
   public Plot2D() {
@@ -278,7 +279,7 @@ public class Plot2D extends JPanel {
       && m_plotInstances.numInstances() > 0) {
       if (j >= 0) {
         m_JitterVal = j;
-        m_JRand = new Random(m_JitterVal);
+        m_JRand = new XoRoShiRo128PlusRandom(m_JitterVal);
         // if (m_pointLookup != null) {
         m_drawnPoints =
           new int[m_XaxisEnd - m_XaxisStart + 1][m_YaxisEnd - m_YaxisStart + 1];
@@ -1458,7 +1459,7 @@ public class Plot2D extends JPanel {
         m_plotCompanion.prePlot(gx);
       }
 
-      m_JRand = new Random(m_JitterVal);
+      m_JRand = new XoRoShiRo128PlusRandom(m_JitterVal);
       paintAxis(gx);
       if (m_axisChanged || m_plotResize) {
         int x_range = m_XaxisEnd - m_XaxisStart;

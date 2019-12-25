@@ -23,6 +23,7 @@ package weka.classifiers.functions;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -186,7 +187,7 @@ public class ElasticNet extends AbstractClassifier implements OptionHandler, Wei
 		m_numInstances = data.numInstances();
 		m_classIndex = data.classIndex();
 		double t1 = System.nanoTime();
-		Random rand = new Random(1);
+		Random rand = new XoRoShiRo128PlusRandom(1);
 		data.randomize(rand);
 		double[] errorMetric_means = new double[m_numModels];
 		double[] errorMetric_stdErrs = new double[m_numModels];

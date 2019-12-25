@@ -22,6 +22,7 @@ package weka.filters.unsupervised.timeseries;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -199,7 +200,7 @@ public class FlatToRelationalTest extends AbstractFilterTest {
             "class",
             IntStream.range(0, numClasses).mapToObj(i -> "class" + i).collect(Collectors.toList()));
     attributes.add(cls);
-    Random rand = new Random(seed);
+    Random rand = new XoRoShiRo128PlusRandom(seed);
     String[] randString = "l k ; r j i e a j ; l s k d n c x c e i u r k n ; a".split(" ");
     String[] randDates = {"2000", "2001", "2002"};
     Instances data = new Instances("data", attributes, numInstances);

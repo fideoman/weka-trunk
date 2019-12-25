@@ -39,6 +39,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Locale;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -224,7 +225,7 @@ public class BoundaryPanel extends JPanel {
     setMaximumSize(m_plotPanel.getMaximumSize());
     setMinimumSize(m_plotPanel.getMinimumSize());
 
-    m_random = new Random(1);
+    m_random = new XoRoShiRo128PlusRandom(1);
     for (Color element : DEFAULT_COLORS) {
       m_Colors.add(new Color(element.getRed(), element.getGreen(), element
         .getBlue()));

@@ -22,6 +22,7 @@ package weka.filters.supervised.attribute;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -299,7 +300,7 @@ public class ClassOrder extends Filter implements SupervisedFilter,
     super.setInputFormat(new Instances(instanceInfo, 0));
 
     m_ClassAttribute = instanceInfo.classAttribute();
-    m_Random = new Random(m_Seed);
+    m_Random = new XoRoShiRo128PlusRandom(m_Seed);
     m_Converter = null;
 
     int numClasses = instanceInfo.numClasses();

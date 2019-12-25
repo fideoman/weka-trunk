@@ -31,6 +31,7 @@ import weka.gui.ProgrammaticProperty;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -301,7 +302,7 @@ public class ReservoirSample extends Filter implements UnsupervisedFilter,
 
     m_subSample = new Object[m_SampleSize];
     m_currentInst = 0;
-    m_random = new Random(m_RandomSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_RandomSeed);
 
     return true;
   }

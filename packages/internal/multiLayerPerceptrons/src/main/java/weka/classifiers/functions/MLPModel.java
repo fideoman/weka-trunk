@@ -27,6 +27,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import weka.classifiers.Classifier;
 import weka.classifiers.RandomizableClassifier;
 import weka.classifiers.functions.activation.ActivationFunction;
@@ -286,7 +287,7 @@ public abstract class MLPModel extends RandomizableClassifier implements Weighte
   public void buildClassifier(Instances data) throws Exception {
 
     // Set up the initial arrays
-    m_data = initializeClassifier(data, new Random(m_Seed));
+    m_data = initializeClassifier(data, new XoRoShiRo128PlusRandom(m_Seed));
     if (m_data == null) {
       return;
     }

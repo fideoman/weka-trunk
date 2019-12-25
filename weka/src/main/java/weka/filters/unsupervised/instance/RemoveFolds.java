@@ -22,6 +22,7 @@
 package weka.filters.unsupervised.instance;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -436,7 +437,7 @@ public class RemoveFolds extends Filter implements UnsupervisedFilter,
     if (!isFirstBatchDone()) {
       if (m_Seed > 0) {
         // User has provided a random number seed.
-        getInputFormat().randomize(new Random(m_Seed));
+        getInputFormat().randomize(new XoRoShiRo128PlusRandom(m_Seed));
       }
       // Push instances for output into output queue
 

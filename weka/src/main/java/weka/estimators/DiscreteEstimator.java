@@ -230,7 +230,7 @@ public class DiscreteEstimator extends Estimator implements
     DiscreteEstimator one = new DiscreteEstimator(5, true);
     DiscreteEstimator two = new DiscreteEstimator(5, true);
 
-    java.util.Random r = new java.util.Random(1);
+    it.unimi.dsi.util.XoRoShiRo128PlusRandom r = new it.unimi.dsi.util.XoRoShiRo128PlusRandom(1);
 
     for (int i = 0; i < 100; i++) {
       int z = r.nextInt(5);

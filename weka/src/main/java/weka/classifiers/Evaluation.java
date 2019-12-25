@@ -24,6 +24,7 @@ package weka.classifiers;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.evaluation.AbstractEvaluationMetric;

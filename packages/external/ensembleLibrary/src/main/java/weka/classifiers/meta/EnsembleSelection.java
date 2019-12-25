@@ -62,6 +62,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
@@ -1226,7 +1227,7 @@ public class EnsembleSelection
     int numModels = predictions.length;
     int modelWeights[] = new int[numModels];
     m_total_weight = 0;
-    Random rand = new Random(m_Seed);
+    Random rand = new XoRoShiRo128PlusRandom(m_Seed);
     
     if (m_algorithm == ALGORITHM_BUILD_LIBRARY) {
       return;

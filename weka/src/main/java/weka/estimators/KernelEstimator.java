@@ -360,7 +360,7 @@ public class KernelEstimator extends Estimator implements IncrementalEstimator,
     KernelEstimator one = new KernelEstimator(0.01);
     KernelEstimator two = new KernelEstimator(0.01);
 
-    java.util.Random r = new java.util.Random(1);
+    it.unimi.dsi.util.XoRoShiRo128PlusRandom r = new it.unimi.dsi.util.XoRoShiRo128PlusRandom(1);
 
     for (int i = 0; i < 100; i++) {
       double z = r.nextDouble();

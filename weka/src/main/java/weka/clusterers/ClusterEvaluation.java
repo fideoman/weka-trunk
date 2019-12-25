@@ -29,6 +29,7 @@ import java.io.FileWriter;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -850,7 +851,7 @@ public class ClusterEvaluation implements Serializable, RevisionHandler {
     if ((clusterer instanceof DensityBasedClusterer) && (doXval == true)
       && (testFileName.length() == 0) && (objectInputFileName.length() == 0)) {
       // cross validate the log likelihood on the training data
-      random = new Random(seed);
+      random = new XoRoShiRo128PlusRandom(seed);
       random.setSeed(seed);
       train = source.getDataSet();
       train.randomize(random);

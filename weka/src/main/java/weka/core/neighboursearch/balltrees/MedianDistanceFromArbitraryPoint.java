@@ -22,6 +22,7 @@ package weka.core.neighboursearch.balltrees;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -277,7 +278,7 @@ public class MedianDistanceFromArbitraryPoint extends BallSplitter implements
   public void splitNode(BallNode node, int numNodesCreated) throws Exception {
     correctlyInitialized();
 
-    m_Rand = new Random(m_RandSeed);
+    m_Rand = new XoRoShiRo128PlusRandom(m_RandSeed);
 
     int ridx = node.m_Start + m_Rand.nextInt(node.m_NumInstances);
     Instance randomInst = (Instance) m_Instances.instance(m_Instlist[ridx])

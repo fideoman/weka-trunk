@@ -24,6 +24,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -373,7 +374,7 @@ public class IsolationForest extends RandomizableClassifier implements
     m_trees = new Tree[m_numTrees];
     data = new Instances(data);
     Random r = (data.numInstances() > 0) ? data
-      .getRandomNumberGenerator(m_Seed) : new Random(m_Seed);
+      .getRandomNumberGenerator(m_Seed) : new XoRoShiRo128PlusRandom(m_Seed);
     for (int i = 0; i < m_numTrees; i++) {
       data.randomize(r);
       m_trees[i] = new Tree(new Instances(data, 0, m_subsampleSize), r, 0,

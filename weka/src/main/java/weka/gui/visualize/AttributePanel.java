@@ -518,7 +518,7 @@ public class AttributePanel extends JScrollPane {
       JPanel padd2 = new JPanel();
 
       /*
-       * if (m_splitListener != null) { m_plotInstances.randomize(new Random());
+       * if (m_splitListener != null) { m_plotInstances.randomize(new XoRoShiRo128PlusRandom());
        * }
        */
 

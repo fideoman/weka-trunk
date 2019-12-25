@@ -28,6 +28,7 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -74,7 +75,7 @@ public class TDigest {
    *          this accuracy.
    */
   public TDigest(double compression) {
-    this(compression, new Random());
+    this(compression, new XoRoShiRo128PlusRandom());
   }
 
   public TDigest(double compression, Random random) {

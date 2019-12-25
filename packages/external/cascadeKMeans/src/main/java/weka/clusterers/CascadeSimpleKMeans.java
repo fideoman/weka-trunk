@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.text.DecimalFormat;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 import java.util.ArrayList;
@@ -155,7 +156,7 @@ public class CascadeSimpleKMeans extends RandomizableClusterer implements Cluste
     /**
      * step 1: iterate over all restarts and possible k values, record CH-scores
      */
-    Random r = new Random(m_Seed);
+    Random r = new XoRoShiRo128PlusRandom(m_Seed);
     double meanCHs[] = new double[maxNumClusters + 1 - minNumClusters];
     double maxCHs[] = new double[maxNumClusters + 1 - minNumClusters];
     int maxSeed[] = new int[maxNumClusters + 1 - minNumClusters];

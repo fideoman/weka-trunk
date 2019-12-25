@@ -102,6 +102,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -2662,7 +2663,7 @@ public class GUI extends JPanel implements LayoutCompleteEventListener {
      */
     public void randomize() {
       int nProbs = m_fProbs[0].length;
-      Random random = new Random();
+      Random random = new XoRoShiRo128PlusRandom();
       for (int i = 0; i < m_fProbs.length; i++) {
         // get random nrs
         for (int j = 0; j < nProbs - 1; j++) {

@@ -22,6 +22,7 @@ package weka.clusterers;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -230,7 +231,7 @@ public class FarthestFirst extends RandomizableClusterer implements
     m_ClusterCentroids = new Instances(m_instances, m_NumClusters);
 
     int n = m_instances.numInstances();
-    Random r = new Random(getSeed());
+    Random r = new XoRoShiRo128PlusRandom(getSeed());
     boolean[] selected = new boolean[n];
     double[] minDistance = new double[n];
 

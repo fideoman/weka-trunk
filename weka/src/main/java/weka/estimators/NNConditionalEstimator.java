@@ -21,6 +21,7 @@
 
 package weka.estimators;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -227,7 +228,7 @@ public class NNConditionalEstimator implements ConditionalEstimator {
       NNConditionalEstimator newEst = new NNConditionalEstimator();
 
       // Create 100 random points and add them
-      Random r = new Random(seed);
+      Random r = new XoRoShiRo128PlusRandom(seed);
 
       int numPoints = 50;
       if (argv.length > 2) {

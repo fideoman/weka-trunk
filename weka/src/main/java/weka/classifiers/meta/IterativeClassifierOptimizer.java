@@ -25,6 +25,7 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
@@ -555,7 +556,7 @@ public class IterativeClassifierOptimizer extends RandomizableClassifier
     getCapabilities().testWithFail(data);
 
     // Need to shuffle the data
-    Random randomInstance = new Random(m_Seed);
+    Random randomInstance = new XoRoShiRo128PlusRandom(m_Seed);
 
     // Save reference to original data
     Instances origData = data;

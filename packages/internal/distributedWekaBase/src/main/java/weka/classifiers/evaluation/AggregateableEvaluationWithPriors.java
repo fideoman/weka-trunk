@@ -21,6 +21,7 @@
 
 package weka.classifiers.evaluation;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.CostMatrix;
@@ -135,7 +136,7 @@ public class AggregateableEvaluationWithPriors extends AggregateableEvaluation {
       numToRetain = 1;
     }
 
-    Random r = new Random(seed);
+    Random r = new XoRoShiRo128PlusRandom(seed);
     for (int i = 0; i < 50; i++) {
       r.nextInt();
     }

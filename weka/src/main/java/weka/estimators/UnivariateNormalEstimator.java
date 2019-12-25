@@ -22,6 +22,7 @@
 package weka.estimators;
 
 import java.io.Serializable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.RevisionUtils;
@@ -184,7 +185,7 @@ public class UnivariateNormalEstimator implements UnivariateDensityEstimator,
   public static void main(String[] args) {
 
     // Get random number generator initialized by system
-    Random r = new Random();
+    Random r = new XoRoShiRo128PlusRandom();
 
     // Create density estimator
     UnivariateNormalEstimator e = new UnivariateNormalEstimator();

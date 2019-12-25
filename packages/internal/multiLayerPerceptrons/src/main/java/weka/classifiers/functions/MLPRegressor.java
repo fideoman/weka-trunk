@@ -21,6 +21,7 @@
 
 package weka.classifiers.functions;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Capabilities;

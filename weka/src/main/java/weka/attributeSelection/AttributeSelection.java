@@ -28,6 +28,7 @@ import java.beans.PropertyDescriptor;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Instance;
@@ -545,7 +546,7 @@ public class AttributeSelection implements Serializable, RevisionHandler {
     Instances cvData = new Instances(m_trainInstances);
     Instances train;
 
-    Random random = new Random(m_seed);
+    Random random = new XoRoShiRo128PlusRandom(m_seed);
     cvData.randomize(random);
 
     if (!(m_ASEvaluator instanceof UnsupervisedSubsetEvaluator)

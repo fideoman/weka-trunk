@@ -57,6 +57,7 @@ import java.io.FileReader;
 import java.io.Reader;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -758,7 +759,7 @@ public class BVDecomposeSegCVSub
         Vector<int[]> segmentList = new Vector<int[]>(q + 1);
 
         //Set random seed
-        Random random = new Random(m_Seed);
+        Random random = new XoRoShiRo128PlusRandom(m_Seed);
 
         data.randomize(random);
 

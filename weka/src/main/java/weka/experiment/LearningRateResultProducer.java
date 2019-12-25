@@ -23,6 +23,7 @@ package weka.experiment;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -294,7 +295,7 @@ public class LearningRateResultProducer implements ResultListener,
 
     // Randomize on a copy of the original dataset
     Instances runInstances = new Instances(m_Instances);
-    runInstances.randomize(new Random(run));
+    runInstances.randomize(new XoRoShiRo128PlusRandom(run));
 
     /*
      * if (runInstances.classAttribute().isNominal() &&

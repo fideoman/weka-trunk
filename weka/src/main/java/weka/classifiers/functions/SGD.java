@@ -24,6 +24,7 @@ package weka.classifiers.functions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -636,7 +637,7 @@ public class SGD extends RandomizableClassifier implements
     m_data = new Instances(data, 0);
 
     if (data.numInstances() > 0) {
-      data.randomize(new Random(getSeed())); // randomize the data
+      data.randomize(new XoRoShiRo128PlusRandom(getSeed())); // randomize the data
       train(data);
     }
   }

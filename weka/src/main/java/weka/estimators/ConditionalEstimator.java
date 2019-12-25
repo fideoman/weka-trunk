@@ -31,7 +31,7 @@ import weka.core.RevisionHandler;
  *   NNConditionalEstimator newEst = new NNConditionalEstimator();
  *
  *   // Create 50 random points and add them
- *   Random r = new Random(seed);
+ *   Random r = new XoRoShiRo128PlusRandom(seed);
  *   for(int i = 0; i < 50; i++) {
  *     int x = Math.abs(r.nextInt() % 100);
  *     int y = Math.abs(r.nextInt() % 100);

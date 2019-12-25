@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashMap;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -433,7 +434,7 @@ public class MITI extends RandomizableClassifier implements OptionHandler,
     private void makeTree(HashMap<Instance, Bag> instanceBags,
       ArrayList<Instance> all, boolean stopOnFirstPositiveLeaf) {
 
-      Random r = new Random(getSeed());
+      Random r = new XoRoShiRo128PlusRandom(getSeed());
 
       AlgorithmConfiguration settings = getSettings();
 

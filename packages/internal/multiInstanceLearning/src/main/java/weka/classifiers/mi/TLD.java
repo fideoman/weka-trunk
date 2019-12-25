@@ -23,6 +23,7 @@ package weka.classifiers.mi;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -427,7 +428,7 @@ public class TLD extends RandomizableClassifier implements OptionHandler,
         m_ParamsN[4 * x + t] = nThisParam[t];
       }
       double pminVal = Double.MAX_VALUE, nminVal = Double.MAX_VALUE;
-      Random whichEx = new Random(m_Seed);
+      Random whichEx = new XoRoShiRo128PlusRandom(m_Seed);
       TLD_Optm pOp = null, nOp = null;
       boolean isRunValid = true;
       double[] sumP = new double[pnum], meanP = new double[pnum], varP = new double[pnum];

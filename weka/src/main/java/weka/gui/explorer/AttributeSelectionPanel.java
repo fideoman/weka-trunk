@@ -97,6 +97,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -825,7 +826,7 @@ public class AttributeSelectionPanel extends AbstractPerspective implements
 
             case 1: // CV mode
               m_Log.statusMessage("Randomizing instances...");
-              Random random = new Random(seed);
+              Random random = new XoRoShiRo128PlusRandom(seed);
               inst.randomize(random);
               if (inst.attribute(classIndex).isNominal()) {
                 m_Log.statusMessage("Stratifying instances...");

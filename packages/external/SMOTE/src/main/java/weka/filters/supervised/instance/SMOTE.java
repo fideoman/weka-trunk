@@ -48,6 +48,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
@@ -589,7 +590,7 @@ public class SMOTE
     }
 
     // use this random source for all required randomness
-    Random rand = new Random(getRandomSeed());
+    Random rand = new XoRoShiRo128PlusRandom(getRandomSeed());
 
     // find the set of extra indices to use if the percentage is not evenly divisible by 100
     List extraIndices = new LinkedList();

@@ -62,6 +62,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -823,7 +824,7 @@ public class ArffHeaderSparkJob extends SparkJob implements
     // directory
     String outputPath = environmentSubstitute(m_sjConfig.getOutputDir());
     outputPath = addSubdirToPath(outputPath, OUTPUT_SUBDIR);
-    Random r = new Random();
+    Random r = new XoRoShiRo128PlusRandom();
     String outHeadName = "" + Math.abs(r.nextInt());
     if (!DistributedJobConfig.isEmpty(getOutputHeaderFileName())) {
       outHeadName = environmentSubstitute(getOutputHeaderFileName());

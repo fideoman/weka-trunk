@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -360,7 +361,7 @@ public class sIB extends RandomizableClusterer implements
     m_data = data;
     m_numInstances = m_data.numInstances();
     m_numAttributes = m_data.numAttributes();
-    random = new Random(getSeed());
+    random = new XoRoShiRo128PlusRandom(getSeed());
 
     // initialize the statistics of the input training data
     input = sIB_ProcessInput();

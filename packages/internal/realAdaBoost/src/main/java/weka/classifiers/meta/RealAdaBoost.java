@@ -23,6 +23,7 @@ package weka.classifiers.meta;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -521,7 +522,7 @@ public class RealAdaBoost extends RandomizableIteratedSingleClassifierEnhancer
 
     Instances trainData, sample, training, trainingWeightsNotNormalized;
     int numInstances = data.numInstances();
-    Random randomInstance = new Random(m_Seed);
+    Random randomInstance = new XoRoShiRo128PlusRandom(m_Seed);
     double minLoss = Double.MAX_VALUE;
 
     // Create a copy of the data so that when the weights are diddled
@@ -641,7 +642,7 @@ public class RealAdaBoost extends RandomizableIteratedSingleClassifierEnhancer
 
     Instances trainData, training, trainingWeightsNotNormalized;
     int numInstances = data.numInstances();
-    Random randomInstance = new Random(m_Seed);
+    Random randomInstance = new XoRoShiRo128PlusRandom(m_Seed);
     double minLoss = Double.MAX_VALUE;
 
     // Create a copy of the data so that when the weights are diddled

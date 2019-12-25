@@ -26,6 +26,7 @@ import java.util.BitSet;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1112,7 +1113,7 @@ public class DecisionTable extends AbstractClassifier implements OptionHandler,
     m_theInstances = new Instances(data);
     m_theInstances.deleteWithMissingClass();
 
-    m_rr = new Random(1);
+    m_rr = new XoRoShiRo128PlusRandom(1);
 
     if (m_theInstances.classAttribute().isNominal()) {// Set up class priors
       m_classPriorCounts = new double[data.classAttribute().numValues()];

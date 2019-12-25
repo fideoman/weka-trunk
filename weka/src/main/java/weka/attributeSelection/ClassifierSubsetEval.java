@@ -26,6 +26,7 @@ import java.util.BitSet;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -767,7 +768,7 @@ public class ClassifierSubsetEval extends HoldOutSubsetEvaluator implements
       } catch (NumberFormatException n) {
       }
 
-      m_trainingInstances.randomize(new Random(m_seed));
+      m_trainingInstances.randomize(new XoRoShiRo128PlusRandom(m_seed));
       int trainSize =
         Math.round(m_trainingInstances.numInstances() * splitPercentage / 100);
       int testSize = m_trainingInstances.numInstances() - trainSize;

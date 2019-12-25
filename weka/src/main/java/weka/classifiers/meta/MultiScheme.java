@@ -23,6 +23,7 @@ package weka.classifiers.meta;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -362,7 +363,7 @@ public class MultiScheme
     Instances newData = new Instances(data);
     newData.deleteWithMissingClass();
     
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     newData.randomize(random);
     if (newData.classAttribute().isNominal() && (m_NumXValFolds > 1)) {
       newData.stratify(m_NumXValFolds);
@@ -382,7 +383,7 @@ public class MultiScheme
 
           // We want to randomize the data the same way for every 
           // learning scheme.
-	  train = newData.trainCV(m_NumXValFolds, j, new Random (1));
+	  train = newData.trainCV(m_NumXValFolds, j, new XoRoShiRo128PlusRandom(1));
 	  test = newData.testCV(m_NumXValFolds, j);
 	  currentClassifier.buildClassifier(train);
 	  evaluation.setPriors(train);

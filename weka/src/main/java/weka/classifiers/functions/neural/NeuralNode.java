@@ -22,6 +22,7 @@ package weka.classifiers.functions.neural;
 
 import weka.core.RevisionUtils;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**

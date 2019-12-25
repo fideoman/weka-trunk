@@ -33,6 +33,7 @@ import weka.core.TechnicalInformation.Type;
 
 import java.util.BitSet;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -744,7 +745,7 @@ public class SubsetSizeForwardSelection extends ASSearch
     Instances[] testData = new Instances[m_numFolds];
     LFSMethods[] searchResults = new LFSMethods[m_numFolds];
 
-    Random random = new Random(m_seed);
+    Random random = new XoRoShiRo128PlusRandom(m_seed);
     Instances dataCopy = new Instances(data);
     dataCopy.randomize(random);
 

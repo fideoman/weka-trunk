@@ -23,6 +23,7 @@ package weka.classifiers.bayes.net.search.local;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -357,7 +358,7 @@ public class GeneticSearch extends LocalScoreSearchAlgorithm {
         "At least one of mutation or cross-over should be used");
     }
 
-    m_random = new Random(m_nSeed);
+    m_random = new XoRoShiRo128PlusRandom(m_nSeed);
 
     // keeps track of best structure found so far
     BayesNet bestBayesNet;

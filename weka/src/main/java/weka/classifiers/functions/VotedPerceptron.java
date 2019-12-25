@@ -24,6 +24,7 @@ package weka.classifiers.functions;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -326,7 +327,7 @@ public class VotedPerceptron
     m_Train = Filter.useFilter(m_Train, m_NominalToBinary);
 
     /** Randomize training data */
-    m_Train.randomize(new Random(m_Seed));
+    m_Train.randomize(new XoRoShiRo128PlusRandom(m_Seed));
 
     /** Make space to store perceptrons */
     m_Additions = new int[m_MaxK + 1];

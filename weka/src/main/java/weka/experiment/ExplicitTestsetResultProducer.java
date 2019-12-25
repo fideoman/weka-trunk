@@ -25,6 +25,7 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.TimeZone;
 import java.util.Vector;
@@ -764,7 +765,7 @@ public class ExplicitTestsetResultProducer implements ResultProducer,
       // training set
       Instances train = new Instances(m_Instances);
       if (m_randomize) {
-        Random rand = new Random(run);
+        Random rand = new XoRoShiRo128PlusRandom(run);
         train.randomize(rand);
       }
 

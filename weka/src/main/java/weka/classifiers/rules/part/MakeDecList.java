@@ -23,6 +23,7 @@ package weka.classifiers.rules.part;
 
 import java.io.Serializable;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -123,7 +124,7 @@ public class MakeDecList implements Serializable, RevisionHandler {
     Instances oldGrowData, newGrowData, oldPruneData, newPruneData;
     theRules = new Vector<ClassifierDecList>();
     if ((reducedErrorPruning) && !(unpruned)) {
-      Random random = new Random(m_seed);
+      Random random = new XoRoShiRo128PlusRandom(m_seed);
       data.randomize(random);
       data.stratify(numSetS);
       oldGrowData = data.trainCV(numSetS, numSetS - 1, random);

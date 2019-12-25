@@ -39,6 +39,7 @@ import weka.filters.unsupervised.attribute.NominalToBinary;
 import weka.filters.unsupervised.attribute.ReplaceMissingValues;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -390,7 +391,7 @@ public class Winnow
 
     /** Randomize training data */
     if(m_Seed != -1) {
-      m_Train.randomize(new Random(m_Seed));
+      m_Train.randomize(new XoRoShiRo128PlusRandom(m_Seed));
     }
 
     /** Make space to store weights */

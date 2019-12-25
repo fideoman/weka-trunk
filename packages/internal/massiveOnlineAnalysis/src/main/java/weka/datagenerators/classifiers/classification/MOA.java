@@ -31,6 +31,7 @@ import weka.core.Utils;
 import weka.datagenerators.ClassificationGenerator;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -279,7 +280,7 @@ public class MOA
     int             i;
 
     result   = new Instances(m_DatasetFormat, 0);
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
 
     for (i = 0; i < getNumExamplesAct(); i++) {
     	inst = generateExample();

@@ -23,6 +23,7 @@ package weka.classifiers.bayes.net;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -128,7 +129,7 @@ public class BayesNetGenerator extends EditableBayesNet {
       m_ParentSets = m_otherBayesNet.getParentSets();
       m_Distributions = m_otherBayesNet.getDistributions();
 
-      random = new Random(m_nSeed);
+      random = new XoRoShiRo128PlusRandom(m_nSeed);
       // initialize m_Instances
       ArrayList<Attribute> attInfo = new ArrayList<Attribute>(m_nNrOfNodes);
       // generate value strings
@@ -157,7 +158,7 @@ public class BayesNetGenerator extends EditableBayesNet {
    * @throws Exception if something goes wrong
    */
   public void Init(int nNodes, int nValues) throws Exception {
-    random = new Random(m_nSeed);
+    random = new XoRoShiRo128PlusRandom(m_nSeed);
     // initialize structure
     ArrayList<Attribute> attInfo = new ArrayList<Attribute>(nNodes);
     // generate value strings

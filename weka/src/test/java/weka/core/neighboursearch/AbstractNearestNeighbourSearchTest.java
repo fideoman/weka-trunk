@@ -22,6 +22,7 @@ package weka.core.neighboursearch;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import junit.framework.TestCase;
@@ -142,7 +143,7 @@ public abstract class AbstractNearestNeighbourSearchTest extends TestCase {
     m_GOETester = getGOETester();
     m_Instances = getInstances();
     m_NumNeighbors = 3;
-    m_Random = new Random(1);
+    m_Random = new XoRoShiRo128PlusRandom(1);
   }
 
   /** Called by JUnit after each test method */

@@ -21,6 +21,7 @@
 
 package weka.classifiers.trees.j48;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Capabilities;
@@ -91,7 +92,7 @@ public class PruneableClassifierTree
     data = new Instances(data);
     data.deleteWithMissingClass();
     
-   Random random = new Random(m_seed);
+   Random random = new XoRoShiRo128PlusRandom(m_seed);
    data.stratify(numSets);
    buildTree(data.trainCV(numSets, numSets - 1, random),
 	     data.testCV(numSets, numSets - 1), !m_cleanup);

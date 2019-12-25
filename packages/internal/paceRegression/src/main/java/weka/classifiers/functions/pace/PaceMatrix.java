@@ -22,6 +22,7 @@
 package weka.classifiers.functions.pace;
 
 import java.text.DecimalFormat;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.RevisionUtils;
@@ -1105,7 +1106,7 @@ public class PaceMatrix extends Matrix {
    * @return An m-by-n matrix with random elements.
    */
   public static Matrix randomNormal(int m, int n) {
-    Random random = new Random();
+    Random random = new XoRoShiRo128PlusRandom();
 
     Matrix A = new Matrix(m, n);
     double[][] X = A.getArray();

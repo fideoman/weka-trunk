@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -909,7 +910,7 @@ public class Cobweb extends RandomizableClusterer implements Drawable,
     data = new Instances(data);
 
     if (getSeed() >= 0) {
-      data.randomize(new Random(getSeed()));
+      data.randomize(new XoRoShiRo128PlusRandom(getSeed()));
     }
 
     for (int i = 0; i < data.numInstances(); i++) {

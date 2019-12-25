@@ -23,6 +23,7 @@ package weka.classifiers.mi;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -400,7 +401,7 @@ public class TLDSimple extends RandomizableClassifier implements OptionHandler,
 
     // Initial values for parameters
     double w, m;
-    Random whichEx = new Random(m_Seed);
+    Random whichEx = new XoRoShiRo128PlusRandom(m_Seed);
 
     // Optimize for one dimension
     for (int x = 0; x < m_Dimension; x++) {

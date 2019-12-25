@@ -24,6 +24,7 @@ package weka.classifiers.meta;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -410,7 +411,7 @@ public class Stacking
     m_BaseFormat = new Instances(data, 0);
     newData.deleteWithMissingClass();
 
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     newData.randomize(random);
     if (newData.classAttribute().isNominal()) {
       newData.stratify(m_NumFolds);

@@ -31,6 +31,8 @@ import weka.filters.unsupervised.attribute.Reorder;
 
 import java.util.*;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
+
 /**
  * <!-- globalinfo-start --> Class for running an arbitrary classifier on data
  * that has been passed through an arbitrary filter. Like the classifier, the
@@ -311,7 +313,7 @@ public class FilteredClassifier extends RandomizableSingleClassifierEnhancer
     getCapabilities().testWithFail(data);
 
     if (m_Classifier instanceof IterativeClassifier) {
-      Random r = (data.numInstances() > 0) ? data.getRandomNumberGenerator(getSeed()) : new Random(getSeed());
+      Random r = (data.numInstances() > 0) ? data.getRandomNumberGenerator(getSeed()) : new XoRoShiRo128PlusRandom(getSeed());
       data = setUp(data, r);
       if (!data.allInstanceWeightsIdentical() && !(m_Classifier instanceof WeightedInstancesHandler)) {
         data = data.resampleWithWeights(r); // The filter may have assigned weights.
@@ -792,7 +794,7 @@ public class FilteredClassifier extends RandomizableSingleClassifierEnhancer
 
     getCapabilities().testWithFail(data);
 
-    Random r = (data.numInstances() > 0) ? data.getRandomNumberGenerator(getSeed()) : new Random(getSeed());
+    Random r = (data.numInstances() > 0) ? data.getRandomNumberGenerator(getSeed()) : new XoRoShiRo128PlusRandom(getSeed());
     data = setUp(data, r);
     if (!data.allInstanceWeightsIdentical() && !(m_Classifier instanceof WeightedInstancesHandler)) {
       data = data.resampleWithWeights(r); // The filter may have assigned weights.

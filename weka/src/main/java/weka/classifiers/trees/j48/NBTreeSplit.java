@@ -21,6 +21,7 @@
 
 package weka.classifiers.trees.j48;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.bayes.NaiveBayesUpdateable;
@@ -178,7 +179,7 @@ public class NBTreeSplit extends ClassifierSplitModel {
      * add these to the error count m_errors += instance.weight(); } }
      */
 
-    Random r = new Random(1);
+    Random r = new XoRoShiRo128PlusRandom(1);
     int minNumCount = 0;
     for (int i = 0; i < m_complexityIndex; i++) {
       if (trainingSets[i].numInstances() >= 5) {
@@ -257,7 +258,7 @@ public class NBTreeSplit extends ClassifierSplitModel {
      * Utils.normalize(m_weights);
      */
 
-    Random r = new Random(1);
+    Random r = new XoRoShiRo128PlusRandom(1);
     int minNumCount = 0;
     for (int i = 0; i < m_complexityIndex; i++) {
       if (trainingSets[i].numInstances() > 5) {

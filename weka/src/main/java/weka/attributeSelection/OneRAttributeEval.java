@@ -22,6 +22,7 @@
 package weka.attributeSelection;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -422,9 +423,9 @@ public class OneRAttributeEval extends ASEvaluation implements
     } else {
       /*
        * o_Evaluation.crossValidateModel("weka.classifiers.rules.OneR",
-       * trainCopy, 10, null, new Random(m_randomSeed));
+       * trainCopy, 10, null, new XoRoShiRo128PlusRandom(m_randomSeed));
        */
-      o_Evaluation.crossValidateModel(oneR, trainCopy, m_folds, new Random(
+      o_Evaluation.crossValidateModel(oneR, trainCopy, m_folds, new XoRoShiRo128PlusRandom(
         m_randomSeed));
     }
     errorRate = o_Evaluation.errorRate();

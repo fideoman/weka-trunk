@@ -23,6 +23,7 @@ package weka.classifiers.rules;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.Attribute;

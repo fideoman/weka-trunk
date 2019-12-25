@@ -24,6 +24,7 @@ package weka.datagenerators.classifiers.classification;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -748,7 +749,7 @@ public class Agrawal extends ClassificationGenerator implements
     ArrayList<String> attValues;
     int i;
 
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
     m_nextClassShouldBeZero = true;
     m_lastLabel = Double.NaN;
 
@@ -953,7 +954,7 @@ public class Agrawal extends ClassificationGenerator implements
     int i;
 
     result = new Instances(m_DatasetFormat, 0);
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
 
     for (i = 0; i < getNumExamplesAct(); i++) {
       result.add(generateExample());

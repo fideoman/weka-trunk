@@ -21,6 +21,7 @@
 
 package weka.classifiers.trees.j48;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.classifiers.AbstractClassifier;
@@ -72,7 +73,7 @@ public final class NBTreeNoSplit
     Instances temp = Filter.useFilter(instances, m_disc);
     m_nb.buildClassifier(temp);
     if (temp.numInstances() >= 5) {
-      m_errors = crossValidate(m_nb, temp, new Random(1));
+      m_errors = crossValidate(m_nb, temp, new XoRoShiRo128PlusRandom(1));
     }
     m_numSubsets = 1;
   }

@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -505,7 +506,7 @@ public class MISMO extends AbstractClassifier implements
 
         // Fit sigmoid if requested
         if (fitLogistic) {
-          fitLogistic(insts, cl1, cl2, numFolds, new Random(randomSeed));
+          fitLogistic(insts, cl1, cl2, numFolds, new XoRoShiRo128PlusRandom(randomSeed));
         }
         return;
       }
@@ -601,7 +602,7 @@ public class MISMO extends AbstractClassifier implements
 
       // Fit sigmoid if requested
       if (fitLogistic) {
-        fitLogistic(insts, cl1, cl2, numFolds, new Random(randomSeed));
+        fitLogistic(insts, cl1, cl2, numFolds, new XoRoShiRo128PlusRandom(randomSeed));
       }
 
     }
@@ -1307,7 +1308,7 @@ public class MISMO extends AbstractClassifier implements
     }
 
     // Build the binary classifiers
-    Random rand = new Random(m_randomSeed);
+    Random rand = new XoRoShiRo128PlusRandom(m_randomSeed);
     m_classifiers = new BinaryMISMO[insts.numClasses()][insts.numClasses()];
     for (int i = 0; i < insts.numClasses(); i++) {
       for (int j = i + 1; j < insts.numClasses(); j++) {

@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -550,7 +551,7 @@ public class ScatterSearchV1 extends ASSearch
       m_totalEvals++;
     }
 
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
 
     m_attributeRanking =RankEachAttribute();
 

@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import javax.swing.BorderFactory;
@@ -188,7 +189,7 @@ public class Visualize3D extends JPanel {
             currentSeed != m_previousSeed) {
           
           inst = new Instances(m_masterInstances, 0, m_masterInstances.numInstances());
-          inst.randomize(new Random(currentSeed));
+          inst.randomize(new XoRoShiRo128PlusRandom(currentSeed));
           inst = new Instances(inst, 0, 
                                (int)Math.round(currentPercent / 100D * inst.numInstances()));
           m_previousPercent = currentPercent;

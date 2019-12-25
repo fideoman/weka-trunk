@@ -23,6 +23,7 @@ package weka.classifiers.functions;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -297,7 +298,7 @@ public class LeastMedSq extends AbstractClassifier implements OptionHandler,
    */
   private void setRandom() {
 
-    m_random = new Random(getRandomSeed());
+    m_random = new XoRoShiRo128PlusRandom(getRandomSeed());
   }
 
   /**

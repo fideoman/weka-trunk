@@ -35,6 +35,7 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -1838,7 +1839,7 @@ public class MultilayerPerceptron extends AbstractClassifier implements
       m_stopped = true;
       m_accepted = false;
       m_instances = new Instances(data);
-      m_random = new Random(m_randomSeed);
+      m_random = new XoRoShiRo128PlusRandom(m_randomSeed);
       m_instances.randomize(m_random);
 
       if (m_useNomToBin) {

@@ -26,6 +26,7 @@ import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.*;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
@@ -1976,7 +1977,7 @@ public class GridSearch extends RandomizableSingleClassifierEnhancer implements
         // evaluate
         eval = new Evaluation(data);
         eval.crossValidateModel(classifier, data, m_Folds,
-          new Random(m_Owner.getSeed()));
+          new XoRoShiRo128PlusRandom(m_Owner.getSeed()));
 
         // store performance
         performance = new Performance(m_Values, eval);

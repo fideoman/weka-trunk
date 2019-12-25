@@ -28,6 +28,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -525,7 +526,7 @@ public class CostSensitiveClassifier
     if (!m_MinimizeExpectedCost) {
       Random random = null;
       if (!(m_Classifier instanceof WeightedInstancesHandler)) {
-	random = new Random(m_Seed);
+	random = new XoRoShiRo128PlusRandom(m_Seed);
       }
       data = m_CostMatrix.applyCostMatrix(data, random);      
     }

@@ -24,6 +24,7 @@ package weka.datagenerators.classifiers.regression;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -557,8 +558,8 @@ public class MexicanHat extends RegressionGenerator {
   public Instances defineDataFormat() throws Exception {
     ArrayList<Attribute> atts;
 
-    m_Random = new Random(getSeed());
-    m_NoiseRandom = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
+    m_NoiseRandom = new XoRoShiRo128PlusRandom(getSeed());
 
     // number of examples is the same as given per option
     setNumExamplesAct(getNumExamples());
@@ -641,7 +642,7 @@ public class MexicanHat extends RegressionGenerator {
     int i;
 
     result = new Instances(m_DatasetFormat, 0);
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
 
     for (i = 0; i < getNumExamplesAct(); i++) {
       result.add(generateExample());

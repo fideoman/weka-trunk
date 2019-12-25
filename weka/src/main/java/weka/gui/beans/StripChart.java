@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Enumeration;
 import java.util.LinkedList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -923,7 +924,7 @@ public class StripChart extends JPanel implements ChartListener,
       jf.pack();
       jf.setVisible(true);
       jd.showChart();
-      Random r = new Random(1);
+      Random r = new XoRoShiRo128PlusRandom(1);
       for (int i = 0; i < 1020; i++) {
         double[] pos = new double[1];
         pos[0] = r.nextDouble();

@@ -46,6 +46,8 @@ import weka.filters.unsupervised.attribute.Normalize;
 
 import java.util.*;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
+
 /**
  <!-- globalinfo-start -->
  * Implements Bayesian Logistic Regression for both Gaussian and Laplace Priors.<br/>
@@ -690,7 +692,7 @@ public class BayesianLogisticRegression extends AbstractClassifier
     // unbiased predictions
     if (list != null) {
       int numFolds = (int) NumFolds;
-      Random random = new Random(m_seed);
+      Random random = new XoRoShiRo128PlusRandom(m_seed);
       m_Instances.randomize(random);
       m_Instances.stratify(numFolds);
 

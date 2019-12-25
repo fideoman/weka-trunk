@@ -59,7 +59,7 @@ import weka.core.Utils;
  * 
  *   // Create 50 random integers first predicting the probability of the
  *   // value, then adding the value to the estimator
- *   Random r = new Random(seed);
+ *   Random r = new XoRoShiRo128PlusRandom(seed);
  *   for(int i = 0; i < 50; i++) {
  *     current = Math.abs(r.nextInt() % 10);
  *     System.out.println(newEst);

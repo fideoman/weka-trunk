@@ -23,6 +23,7 @@ package weka.datagenerators.classifiers.classification;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -470,7 +471,7 @@ public class RandomRBF extends ClassificationGenerator {
     ArrayList<String> clsValues;
     Random rand;
 
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
     rand = getRandom();
 
     // number of examples is the same as given per option
@@ -582,7 +583,7 @@ public class RandomRBF extends ClassificationGenerator {
     int i;
 
     result = new Instances(m_DatasetFormat, 0);
-    m_Random = new Random(getSeed());
+    m_Random = new XoRoShiRo128PlusRandom(getSeed());
 
     for (i = 0; i < getNumExamplesAct(); i++) {
       result.add(generateExample());

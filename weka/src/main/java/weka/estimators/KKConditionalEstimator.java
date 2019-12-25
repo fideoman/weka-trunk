@@ -21,6 +21,7 @@
 
 package weka.estimators;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.RevisionUtils;
@@ -272,7 +273,7 @@ public class KKConditionalEstimator implements ConditionalEstimator {
       KKConditionalEstimator newEst = new KKConditionalEstimator(0.1);
 
       // Create 100 random points and add them
-      Random r = new Random(seed);
+      Random r = new XoRoShiRo128PlusRandom(seed);
       
       int numPoints = 50;
       if (argv.length > 2) {

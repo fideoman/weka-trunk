@@ -46,6 +46,7 @@ import weka.filters.unsupervised.attribute.RemoveUseless;
 import weka.filters.unsupervised.instance.RemovePercentage;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -854,7 +855,7 @@ public class RotationForest
       m_random = m_data.getRandomNumberGenerator(m_Seed);
     }
     else {
-      m_random = new Random(m_Seed);
+      m_random = new XoRoShiRo128PlusRandom(m_Seed);
     }
 
     m_RemoveUseless = new RemoveUseless();

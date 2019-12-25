@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import org.junit.Test;
@@ -248,7 +249,7 @@ public class KMeansTaskTest {
     initialCenters.add(irisData.instance(100));
 
     // randomize the iris data
-    irisData.randomize(new Random(1));
+    irisData.randomize(new XoRoShiRo128PlusRandom(1));
 
     initialCenters = task[0].applyFilters(initialCenters);
     task[0].setCentroids(initialCenters);
@@ -433,7 +434,7 @@ public class KMeansTaskTest {
     initialCenters.add(irisData.instance(100));
 
     // randomize the iris data
-    irisData.randomize(new Random(1));
+    irisData.randomize(new XoRoShiRo128PlusRandom(1));
 
     initialCenters = task[0].applyFilters(initialCenters);
     task[0].setCentroids(initialCenters);

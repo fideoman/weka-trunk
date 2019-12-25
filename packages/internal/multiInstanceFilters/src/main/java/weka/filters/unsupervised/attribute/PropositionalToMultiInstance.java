@@ -23,6 +23,7 @@ package weka.filters.unsupervised.attribute;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -586,7 +587,7 @@ public class PropositionalToMultiInstance extends Filter implements
     addBag(input, output, bagInsts, (int) bagIndex, classValue, bagWeight);
 
     if (getRandomize()) {
-      output.randomize(new Random(getSeed()));
+      output.randomize(new XoRoShiRo128PlusRandom(getSeed()));
     }
 
     for (int i = 0; i < output.numInstances(); i++) {

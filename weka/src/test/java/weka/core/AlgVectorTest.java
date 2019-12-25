@@ -19,6 +19,7 @@
 
 package weka.core;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import junit.framework.Test;
@@ -55,7 +56,7 @@ public class AlgVectorTest
   protected void setUp() throws Exception {
     super.setUp();
     
-    m_Random = new Random(1);
+    m_Random = new XoRoShiRo128PlusRandom(1);
   }
 
   /**
@@ -148,7 +149,7 @@ public class AlgVectorTest
 	}
 	
 	// 3. is instance returned correct?
-	Instance inst = v.getAsInstance(data, new Random(1));
+	Instance inst = v.getAsInstance(data, new XoRoShiRo128PlusRandom(1));
 	for (int i = 0; i < data.numAttributes(); i++) {
 	  if (!data.attribute(i).isNumeric())
 	    continue;

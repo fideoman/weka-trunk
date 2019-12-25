@@ -29,6 +29,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -695,7 +696,7 @@ public class ArffHeaderHadoopJob extends HadoopJob implements
       String outputPath = m_mrConfig.getOutputPath();
       outputPath += OUTPUT_SUBDIR;
       m_mrConfig.setOutputPath(outputPath);
-      Random r = new Random();
+      Random r = new XoRoShiRo128PlusRandom();
       String outHeadName = "" + Math.abs(r.nextInt());
       if (!DistributedJobConfig.isEmpty(getOutputHeaderFileName())) {
         outHeadName = environmentSubstitute(getOutputHeaderFileName());

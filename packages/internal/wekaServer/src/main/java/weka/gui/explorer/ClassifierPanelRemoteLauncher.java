@@ -43,6 +43,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -1913,7 +1914,7 @@ public class ClassifierPanelRemoteLauncher extends JPanel implements
               "Trouble parsing random seed value");
             rnd = 1;
           }
-          Random random = new Random(rnd);
+          Random random = new XoRoShiRo128PlusRandom(rnd);
           inst.randomize(random);
           if (inst.attribute(classIndex).isNominal()) {
             statusMessage("Stratifying instances...");
@@ -2243,7 +2244,7 @@ public class ClassifierPanelRemoteLauncher extends JPanel implements
         } catch (Exception ex) {
           logMessage("Trouble parsing random seed value");
         }
-        inst.randomize(new Random(rnd));
+        inst.randomize(new XoRoShiRo128PlusRandom(rnd));
       }
 
       int trainSize = (int) Math.round(inst.numInstances() * percent / 100);

@@ -50,6 +50,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -1073,7 +1074,7 @@ public class WekaClassifierMapTask implements OptionHandler,
         System.err.println("Trouble parsing random seed value: " + sSeed);
       }
     }
-    Random r = new Random(seed);
+    Random r = new XoRoShiRo128PlusRandom(seed);
     m_trainingHeader.randomize(r);
     if (m_trainingHeader.classAttribute().isNominal() && m_totalFolds > 1) {
       m_trainingHeader.stratify(m_totalFolds);

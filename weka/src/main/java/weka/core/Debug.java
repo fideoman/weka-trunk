@@ -35,6 +35,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
+
 /**
  * A helper class for debug output, logging, clocking, etc.
  * 
@@ -892,7 +894,7 @@ public class Debug
    * @version $Revision$
    */
   public static class Random
-    extends java.util.Random
+    extends it.unimi.dsi.util.XoRoShiRo128PlusRandom
     implements Serializable, RevisionHandler {
 
     /** for serialization */
@@ -1483,8 +1485,8 @@ public class Debug
    * 
    * @return		a new instance of a Random object
    */
-  public static java.util.Random newRandom() {
-    return new Random(true);
+  public static it.unimi.dsi.util.XoRoShiRo128PlusRandom newRandom() {
+    return new XoRoShiRo128PlusRandom();
   }
   
   /**
@@ -1494,8 +1496,8 @@ public class Debug
    * @param seed	the seed value
    * @return		a new instance of a Random object
    */
-  public static java.util.Random newRandom(int seed) {
-    return new Random(seed, true);
+  public static it.unimi.dsi.util.XoRoShiRo128PlusRandom newRandom(int seed) {
+    return new XoRoShiRo128PlusRandom(seed);
   }
 
   /**

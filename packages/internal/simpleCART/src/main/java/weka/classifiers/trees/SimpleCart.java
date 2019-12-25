@@ -24,6 +24,7 @@ package weka.classifiers.trees;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -289,7 +290,7 @@ public class SimpleCart extends RandomizableClassifier implements
       return;
     }
 
-    Random random = new Random(m_Seed);
+    Random random = new XoRoShiRo128PlusRandom(m_Seed);
     Instances cvData = new Instances(data);
     cvData.randomize(random);
     cvData = new Instances(cvData, 0,

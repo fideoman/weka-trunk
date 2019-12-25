@@ -22,6 +22,7 @@ package weka.core;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**

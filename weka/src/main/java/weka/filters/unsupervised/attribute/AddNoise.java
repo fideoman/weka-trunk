@@ -21,6 +21,7 @@
 package weka.filters.unsupervised.attribute;
 
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -490,7 +491,7 @@ public class AddNoise extends Filter implements UnsupervisedFilter,
     }
 
     // randomize list of indexes
-    Random random = new Random(seed);
+    Random random = new XoRoShiRo128PlusRandom(seed);
     for (int i = instances.numInstances() - 1; i >= 0; i--) {
       int hValue = indexList[i];
       int hIndex = (int) (random.nextDouble() * i);
@@ -552,7 +553,7 @@ public class AddNoise extends Filter implements UnsupervisedFilter,
     // add noise
     // using the randomized index-array
     //
-    Random randomValue = new Random(seed);
+    Random randomValue = new XoRoShiRo128PlusRandom(seed);
     int numOfValues = instances.attribute(attIndex).numValues();
     for (int i = 0; i < instances.numInstances(); i++) {
       if (sum_count >= sum_max) {

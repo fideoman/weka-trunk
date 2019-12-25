@@ -53,6 +53,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -537,7 +538,7 @@ public class SMO
 
         // Fit sigmoid if requested
         if (fitCalibrator) {
-          fitCalibrator(insts, cl1, cl2, numFolds, new Random(randomSeed));
+          fitCalibrator(insts, cl1, cl2, numFolds, new XoRoShiRo128PlusRandom(randomSeed));
         }
         return;
       }
@@ -687,7 +688,7 @@ public class SMO
 
       // Fit sigmoid if requested
       if (fitCalibrator) {
-        fitCalibrator(insts, cl1, cl2, numFolds, new Random(randomSeed));
+        fitCalibrator(insts, cl1, cl2, numFolds, new XoRoShiRo128PlusRandom(randomSeed));
       }
     }
     
@@ -1410,7 +1411,7 @@ public class SMO
     }
 
     // Build the binary classifiers
-    Random rand = new Random(m_randomSeed);
+    Random rand = new XoRoShiRo128PlusRandom(m_randomSeed);
     m_classifiers = new BinarySMO[insts.numClasses()][insts.numClasses()];
     for (int i = 0; i < insts.numClasses(); i++) {
       for (int j = i + 1; j < insts.numClasses(); j++) {

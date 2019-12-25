@@ -21,6 +21,7 @@
 
 package weka.classifiers.functions.pace;
 
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 import weka.core.RevisionUtils;
@@ -373,8 +374,8 @@ public class  NormalMixture
     int n2 = 50;
     double mu1 = 0;
     double mu2 = 5; 
-    DoubleVector a = Maths.rnorm( n1, mu1, 1, new Random() );
-    a = a.cat( Maths.rnorm( n2, mu2, 1, new Random() ) );
+    DoubleVector a = Maths.rnorm( n1, mu1, 1, new XoRoShiRo128PlusRandom() );
+    a = a.cat( Maths.rnorm( n2, mu2, 1, new XoRoShiRo128PlusRandom() ) );
     DoubleVector means = (new DoubleVector( n1, mu1 )).cat(new DoubleVector(n2, mu2));
 
     System.out.println("==========================================================");

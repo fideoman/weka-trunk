@@ -22,6 +22,7 @@ package weka.classifiers.bayes.net.search.local;
 
 import java.util.Collections;
 import java.util.Enumeration;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -182,7 +183,7 @@ public class K2 extends LocalScoreSearchAlgorithm implements
 
     if (m_bRandomOrder) {
       // generate random ordering (if required)
-      Random random = new Random();
+      Random random = new XoRoShiRo128PlusRandom();
       int iClass;
       if (getInitAsNaiveBayes()) {
         iClass = 0;

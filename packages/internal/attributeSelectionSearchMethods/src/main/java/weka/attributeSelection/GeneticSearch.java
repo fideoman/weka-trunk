@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.util.BitSet;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -847,7 +848,7 @@ public class GeneticSearch extends ASSearch implements StartSetHandler,
 
     // initial random population
     m_lookupTable = new Hashtable<BitSet, GABitSet>(m_lookupTableSize);
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
     m_population = new GABitSet[m_popSize];
 
     // set up random initial population

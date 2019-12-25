@@ -35,6 +35,7 @@ import weka.filters.unsupervised.attribute.Standardize;
 import weka.filters.unsupervised.instance.RemoveRange;
 
 import java.util.ArrayList;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 
 /**
@@ -319,7 +320,7 @@ public class XNV extends RandomizableClassifier implements TechnicalInformationH
 
     // Shuffle the data
     data = new Instances(data);
-    data.randomize(new Random(getSeed()));
+    data.randomize(new XoRoShiRo128PlusRandom(getSeed()));
     
     if (!getDoNotStandardize()) {
 

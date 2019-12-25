@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Enumeration;
 import java.util.List;
+import it.unimi.dsi.util.XoRoShiRo128PlusRandom;
 import java.util.Random;
 import java.util.Vector;
 
@@ -167,7 +168,7 @@ public class TabuSearch extends ASSearch
 
     ASEvaluator =(SubsetEvaluator)ASEval;
 
-    m_random = new Random(m_seed);
+    m_random = new XoRoShiRo128PlusRandom(m_seed);
 
     int numN = m_numNeighborhood;
     numN = (m_numNeighborhood <= 0) ? 3*m_numAttribs/4 : m_numNeighborhood;
